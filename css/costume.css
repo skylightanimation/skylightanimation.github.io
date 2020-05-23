@@ -1,0 +1,175 @@
+/*
+Theme Name: FAST TYPING
+Theme URI: https://twitter.com/SKyLight_Army
+Author: @SkyLight_Army
+Author URI: https://www.facebook.com/SkyLight.Animation
+Description: Fast Typing is game-based application that we develop to measure your typing speed using 10 fingers.
+Text Domain: http://skylightanimation.github.io
+*/
+
+
+/*-- header --*/
+
+.header img.background{opacity: 0.5}
+.header {margin-top:51px;}
+.navbar-header{z-index: 9999}
+.logo-header{
+	position: absolute;
+    left: 39%;
+    z-index: 6;
+    top: 120px;
+    width: 21%;
+}
+/*.title-header{
+	position: absolute;
+	left: 34%;
+	z-index: 5;
+	width: 30%;
+	top: 560px;
+}*/
+/*-- header --*/
+
+/*-- component --*/
+.btn-itchio{
+	background: #FF2449!important;	
+	border: #c3223e!important;
+}
+
+.btn-itchio:hover{
+	background: #24292e!important;	
+}
+
+.btn-github{
+	background: #24292e!important;	
+	border: #000000!important;
+}
+
+.btn-github:hover{
+	background:#000000!important;
+}
+
+a.btn.btn-lg.github{background: #24292e!important; color: #fff!important;font-size: 25px; margin: 0 10px; padding: 5px 10px 3px;}
+a.btn.btn-lg.linkedin{background: #0073b1!important; color: #fff!important;font-size: 25px; margin: 0 10px; padding: 5px 10px 3px;}
+a.btn.btn-lg.facebook{background: #3c5a98!important; color: #fff!important;font-size: 25px; margin: 0 10px; padding: 5px 10px 3px;}
+a.btn.btn-lg.twitter{background: #1da1f2!important; color: #fff!important;font-size: 25px; margin: 0 10px; padding: 5px 10px 3px;}
+a.btn.btn-lg.blogger{background: #ff5722!important; color: #fff!important;font-size: 25px; margin: 0 10px; padding: 5px 10px 3px;}
+a.btn.btn-lg.pinterest{background: #b4292c!important; color: #fff!important;font-size: 25px; margin: 0 10px; padding: 5px 10px 3px;}
+a.btn.btn-lg.youtube{background: #cc0000!important; color: #fff!important;font-size: 25px; margin: 0 10px; padding: 5px 10px 3px;}
+a.btn.btn-lg.itchio{background: #FF2449!important; color: #fff!important;font-size: 25px; margin: 0 10px; padding: 5px 10px 3px;}
+
+a.btn-contact.github{background-color: transparent!important;color: #24292e!important;}
+a.btn-contact.linkedin{background-color: transparent!important;color: #0073b1!important;}
+a.btn-contact.facebook{background-color: transparent!important;color: #3c5a98!important;}
+a.btn-contact.twitter{background-color: transparent!important;color: #1da1f2!important;}
+a.btn-contact.blogger{background-color: transparent!important;color: #ff5722!important;}
+
+/*-- component --*/
+
+
+/*-- booststrap --*/
+
+.media, .media .media {
+    display: inline-flex;
+}
+
+/*-- booststrap --*/
+
+/*-- content --*/
+	.container.marketing {
+   		padding: 50px 25px;
+	}
+	.row-content{
+		padding: 0px 0px 15px 0px;
+	}
+
+	.project-row-even{
+		background: #fff;
+    	padding: 50px 50px 35px;
+   	 	border-radius: 15px;
+	}
+	.project-row-odd{
+		border: solid 1px #a7a6a6;
+		border-radius: 15px;
+		padding: 50px 50px 35px;
+		background: #444444;
+		color: #fff;
+	}
+	#about-content{text-align: center;    font-size: 21px;    line-height: 56px;}
+	#about{background: #444444; color: #dfdfdf;}
+	#team{background: #f3f3f3;}
+
+	img.img-circle {
+	    border: solid 5px #bfbfbf;
+	    background: #fbfbfb;
+	    padding: 2px;
+	    box-shadow: 2px 1px rgba(34, 34, 34, 0.5);
+	}
+
+	.paddingZero{
+		padding: 0px!important;
+	}
+
+
+	img.featurette-image.img-responsive.col-md-12.paddingZero {
+	    background: #fff;
+	}
+
+
+	#project{
+		background: #f3f3f3;
+	}
+
+    	.text-muted{
+    		font-size: 22px
+    	}
+    	img.featurette-image.img-responsive{
+			border-radius: 25px;
+			border: 1px solid #ccc;
+			/*width: 75%;*/
+		}
+
+	h4.media-heading{
+		font-weight: 900
+	}
+
+	.btn-contact{
+		font-size: 25px
+	}
+/*-- content --*/
+
+
+/*-- contributor --*/
+img.media-object{
+	margin: 0px 10px 5px ;
+	width: 64px;
+}
+/*-- contributor --*/
+
+
+/*-- footer ---*/
+
+ul li a.social-icon{
+	display: inline;
+	list-style: none;
+}
+
+div.social-icon{
+	display: inline;
+	margin: 2px
+}
+
+div.social-icon a{
+	padding: 5px;
+	background: #222;
+	color: #fff;
+}
+
+.footer{
+	background: #222;
+	height: 100px;
+	padding: 20px 15px;
+	color: #fff;
+}
+
+
+/*-- footer ---*/
