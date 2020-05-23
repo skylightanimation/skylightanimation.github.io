@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ryunosuke Arima | Profile</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="assets/img/SkyLight_Animation.png">
+
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+	<style type="text/css">
+		body{font-family: sans-serif;font-family: sans-serif; padding: 0 0%;margin: 10px 0;}
+
+		.cover-profile{background: url(assets/img/header.png);    border: solid 2px; background-size: 100% 100%; height: 150px; border-bottom: solid 5px #c2c2c2;border-radius: 10px 10px 0px 0px}
+		.info-profile{background: #ccc; padding: 10px 15px 25px;border-radius: 0px 0px 10px 10px;}
+		.photo-profile{border-radius: 50%;height: 95px;width: 95px;border: solid 5px #c2c2c2;position: relative;top: -195px;}
+
+		.text-decoration{text-shadow: #7b7777 1px 2px 1px;color: #242424;padding: 0px;margin: 20px 0px 10px;}
+
+		.input-form{border: solid 1px #ddd;border-radius: 4px;padding: 5px 2px;margin: 5px 0px;width: 100%;}
+		label{font-weight: bold;display: block;padding: 2px 10px;font-size: 12px;}
+		.redColor{color: #ff2b2b}
+		.box-thumbail{background: #c1c1c1; border: solid 1px #ccc; border-radius: 4px;margin: 10px 0px}
+		.box-thumbail h2{margin: 10px}
+		.ctrl-button{padding: 10px; background: #222; border-radius: 4px;color: #fff;text-decoration: none}
+
+		.right{float: right}h3{margin: 5px;}
+
+		a{text-decoration: none;color: #126fa4;}a:hover{color: #3a8cbb;;}
+		.ctrl-guard-button{float: left;position:fixed;margin: 0px;}
+		ul.ctrl-guard-button{list-style: none;padding: 0px; float: left;position: relative;background: #c2c2c2;padding: 5px 2px;border-radius: 4px;border: solid 1px #ccc;}
+		ul.ctrl-guard-button li{padding: 2px 5px;}
+		li button.ctrl-button{padding: 5px;height: 30px;border: solid 1px #444}
+		.active{border: solid 1px #1aa7d2!important;background: #0096c3!important;}
+
+		button.ctrl-button:active {background: #2196F3;border: solid 1px #1281c1;}
+		li button.ctrl-button:hover {background: #fff!important;color: #444!important;border: solid 1px #444!important;}
+		button.ctrl-button span.fa {width: 25px; text-align: center}
+		.box-3{/*width: 30%;*/margin: 0 10px 0px;min-width: 300px;position: relative;float: left;}
+		.container{position: absolute;min-height: 1px;left: 60px; margin-bottom: 60px}
+		.header{margin-bottom: 20px; min-width: 350px;}
+		.box{border: 1px solid #ddd; width: 100%; min-width: 350px;margin: 0px 0px 20px;position: relative;float: left;border-radius: 4px;}
+		.box-title {padding: 10px; background: #f9f9f9;border-radius: 4px 4px 0 0;border-bottom: solid 1px #ccc}
+		.box-h{padding: 5px 15px 15px}.sub-title{background: #222;border-radius: 4px;padding: 5px 10px;color: #fff;margin: 10px 0px;font-weight: bold;}
+		text{margin: 0px 5px;border-bottom: solid 1px #ccc;padding: 0px 5px 2px;}
+		.progress {height: 10px;margin-bottom: 20px;overflow: hidden;background-color: #f9f9f9;border-radius: 4px;-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);box-shadow: inset 0 1px 2px rgba(0,0,0,.1);}
+		.progress-bar{float: left;width: 0;height: 100%;font-size: 12px;line-height: 20px;color: #fff;text-align: center;background-color: #337ab7;-webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);-webkit-transition: width .6s ease;-o-transition: width .6s ease;transition: width .6s ease;}
+
+
+		.btn-social span{padding: 5px;background: #444;color: #fff;border: solid 1px #222;border-radius: 4px;font-size: 15px;width: 15px;height: 15px;text-align: center;}
+		.btn-social span:hover{background: #fff!important;color:#222; border: solid 1px #222!important}
+
+		.contributor-list{padding: 5px 10px;border-bottom: solid 1px #f2f2f2;}
+		@media screen and (max-width:300px){.photo-profile {top: -225px;}}
+
+		footer{position: fixed;bottom: 0px;background: #222;color: #ccc;width: 100%;text-align: right;}
+		.footer-logo{float: left;width: 65px;height: 65px;}
+		.footer-text{ padding: 25px;}
+	</style>
+	
+</head>
+<body>
+
+
+
+	<div class="ctrl-guard-button">
+		<ul class="ctrl-guard-button">
+			<li><button id="btn-profile" type="button" onclick="profile('profile')" class="ctrl-button active" title="Basic Information"><span class="fa fa-user"></span></button></li>
+			<li><button id="btn-skill" type="button" onclick="skill('skill')" class="ctrl-button active" title="Skill Information"><span class="fa fa-cogs"></span></button></li>
+			<li><button id="btn-contributor" type="button" onclick="contributor('contributor')" class="ctrl-button active" href="" title="Contact Information"><span class="fa fa-globe"></span></button></li>
+			<li><button id="btn-contact" type="button" onclick="contact('contact')" class="ctrl-button active" title="Contact Information"><span class="fa fa-envelope"></span></button></li>
+		</ul>
+	</div>
+
+
+<div class="container">
+	<div class="box-3" >
+		<!-- Header -->
+			<div class="header">
+				<center>
+				<div class="cover-profile">
+
+				</div>
+						
+
+				<div class="info-profile">
+					<h1 class="text-decoration">ar_ma</h1>
+				</div>
+				</center>
+				<center style="height: 0px;">
+				<img class="photo-profile" src="assets/img/photo-profile.jpg">
+				</center>
+			</div>
+		<!-- Header -->
+		<!-- Basic Information -->
+			<div id="profile" class="box">
+				<div class="box-title">
+					<h3>Basic Info <i class="fa fa-user right"></i></h3>
+				</div>
+					<div class="box-h">
+						
+						<div class="sub-title">Birthday</div>
+						<text><span class="fa fa-calendar"></span> January 18<sup>th</sup>, 1998</text><br><br>
+
+					
+						<div class="sub-title">Gender</div>
+						<text><span class="fa fa-male"></span> Male</text><br><br>
+
+
+						<div class="sub-title">Hobby</div>
+						<text> <span class="fa fa-dribbble"></span> Basketball, <span class="fa fa-code"></span> Coding </text>
+					</div>	
+			</div>
+		<!-- Basic Information -->	
+	</div>
+
+	<div class="box-3" >
+		
+		<!-- skill -->
+			<div id="skill" class="box">
+				<div class="box-title"><h3>Skill<span class="fa  fa-gears right"></span></h3></div>
+				<div class="box-h">
+
+					<span class="fa fa-html5"></span> HTML<b class="right">78%</b><br>
+					<div class="progress">
+					  <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 78%;">
+					    
+					  </div>
+					</div>
+					<span class="fa fa-css3"></span> CSS<b class="right">60%</b><br>
+					<div class="progress">
+					  <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 52%;">
+					    
+					  </div>
+					</div>
+
+				</div>
+			</div>
+		<!-- skill -->
+
+		<!-- contributor -->
+			<div id="contributor" class="box">
+				<div class="box-title"><h3>Contributor to<i class="fa fa-globe right"></i></h3></div>
+
+				<div class="box-h">
+
+					<div class="contributor-list">
+						<b>Blogger</b><br>
+						<i><a href="https://langittutorial.blogspot.com">Langit Tutorial</a></i>
+					</div>
+					<div class="contributor-list">
+						<b>Itch.io</b><br>
+						<span class="fa fa-store"></span><i><a href="https://skylightanimation.itch.io">SkyLight.Animation</a></i>
+					</div>
+					<br>
+					<center>
+
+						<a class="btn-social" href="https://www.facebook.com/SkyLight.Animation/"><span style="background: #2871a4;border: solid #095290 1px;" class=" fa fa-facebook"></span></a>
+						<a  class="btn-social" href="https://twitter.com/skylight_army"><span style="background: #19a1ff;border: solid 1px #30bdf0;" class=" fa fa-twitter"></span></a>
+						<a class="btn-social" href="https://github.com/skylightanimation"><span class=" fa fa-github"></span></a>
+						<a class="btn-social" href="https://www.youtube.com/channel/UCDT3jUQAGTh1U2xOSEhAWUQ"><span style="background: #d91818;border: solid 1px #b50000;" class=" fa fa-youtube"></span></a>
+					</center>
+						
+
+				</div>
+			</div>
+		<!-- contributor -->
+	</div>
+
+	<div class="box-3" >	
+		<!-- Comment -->
+			<div id="contact" class="box">
+				<div class="box-title"><h3>Contact Us<span class="fa  fa-envelope right"></span></h3></div>
+				<div class="box-h">
+
+
+					<div class="form-row">
+						<label>Name <small class="redColor">*</small></label>
+						<input class="input-form" type="name" name="name">
+					</div>
+
+					<div class="form-row">
+						<label>Email <small class="redColor">*</small></label>
+						<input class="input-form" type="email" name="email">
+					</div>
+					<div class="form-row">
+						<label>Commentar <small class="redColor">*</small></label>
+						<textarea class="input-form" name="comment"></textarea>
+					</div>
+				</div>
+			</div>
+		<!-- Comment -->
+	</div>
+</div>
+
+<footer> 
+	<div><img class="footer-logo" src="assets/img/SkyLight_Animation.png"></div>
+	<div class="footer-text"><b>Arima Ryunosuke</b> | 2019 &copy;  </div>
+</footer>
+<script type="text/javascript">
+
+	function profile(id){
+	    var access = document.getElementById(id);
+	    var btn = 'btn-'+id;
+	    var accessBtn = document.getElementById(btn);
+
+        if(access.style.display == "none") {
+           access.style.display = "block";
+           accessBtn.className += " active";
+        }else {
+            access.style.display = "none";
+            accessBtn.className = "ctrl-button";
+            //accessBtn.className += "ctrl-button";
+        }
+	}
+
+	function skill(id){
+	    var access = document.getElementById(id);
+	    var btn = 'btn-'+id;
+	    var accessBtn = document.getElementById(btn);
+
+        if(access.style.display == "none") {
+           access.style.display = "block";
+           accessBtn.className += " active";
+        }else {
+            access.style.display = "none";
+            accessBtn.className = "ctrl-button";
+        }
+	}
+	function contact(id){
+	    var access = document.getElementById(id);
+	    var btn = 'btn-'+id;
+	    var accessBtn = document.getElementById(btn);
+
+        if(access.style.display == "none") {
+           access.style.display = "block";
+           accessBtn.className += " active";
+        }else {
+            access.style.display = "none";
+            accessBtn.className = "ctrl-button";
+        }
+	}
+	function contributor(id){
+	    var access = document.getElementById(id);
+	    var btn = 'btn-'+id;
+	    var accessBtn = document.getElementById(btn);
+
+        if(access.style.display == "none") {
+           access.style.display = "block";
+           accessBtn.className += " active";
+        }else {
+            access.style.display = "none";
+            accessBtn.className = "ctrl-button";
+        }
+	}
+
+</script>
+
+
+	
+
+</body>
+</html>
