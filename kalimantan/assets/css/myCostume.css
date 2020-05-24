@@ -1,0 +1,484 @@
+.box{
+	padding: 10px;
+	text-align: center;
+	min-height: 158px;
+	background: rgba(255, 255, 255, 0.7)!important;
+ 	border-radius: 0px!important;
+        margin: 15px 0;
+}
+
+.gamePage {
+    background-image: url(../img/blankMap01.png);
+    min-height: 640px;
+    background-size: 100% 100%;
+    border-radius: 5px; 
+}
+
+.gameBox {height: 430px; background: #3a6ea5; align-items: center;}
+canvas{background: #dad2d2;}
+
+#mainTime, #turnTime{color: #19b698;}
+.modal-body{padding: 0 15px!important;}
+.questPage{height:100%}
+
+.turnTimerBox{    color: #19b698;
+    font-size: 20px;
+    text-align: right;}
+
+
+.questForm{background: rgba(255, 255, 255, 0.7)!important; min-height: 165px!important;border: solid 1px #ccc;padding: 0 10px 10px 10px;margin: 15px 0;}
+.paddingRemove{ padding: 0px!important}
+
+
+.myform-control{
+    display: block;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.mainTimerBox{
+    margin: 0px;
+    font-size: 50px;
+    padding: 20px 0 10px;
+    color: #19b698;
+}
+.finalScorePage {
+    width: 100%;
+    height: 100%;
+    border-radius: 0px!important;background: rgba(255, 255, 255, 0.8)!important;
+}
+.scorePage{
+    padding: 0px!important;
+    margin: 0px!important;
+    width: 100%!important;
+        height: 100%!important;
+}
+.paragraf{    font-size: 17px;
+    margin: 22px 0;}
+
+#secondFrame{
+margin: 10px 0px;
+
+}
+.media-heading{
+    line-height: 30px;
+    border-bottom: solid 1px #ccc;
+    font-weight: bold;
+}
+.scoreBoxForm{padding:8px 10px;}
+#scoreFinal{
+    padding: 10px 0 15px 0;
+    margin: 0 0 20px;
+    border: solid 1px #ccc;
+    width: 100px;
+    background: #fff;
+    font-size: 32px;
+}
+#scoreFinalTitle{
+    background: #19b698;
+    width: 100px;
+    color: #fff;
+    margin: 0px;
+    padding: 5px;
+}
+.modal-backdrop{background: rgba(255, 255, 255, 0.30)!important}
+.scoreForm{background: rgba(255, 255, 255, 0.75)!important;
+    padding: 20px;
+    margin-top: 5px;}
+.modal-header{
+    background: #fff;
+}
+
+.carousel-caption {
+    position: absolute;
+    right: 15%;
+    top: 0px!important;
+    bottom: 0px;
+    text-shadow: 0 1px 2px rgba(25, 182, 152, 0.7)!important;
+}
+.carousel-inner{height: 100%!important;    min-height: 640px;}
+
+
+
+.img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img {
+
+    height: 0px!important   ;
+}
+
+.imageTimer{box-shadow:-5px 3px 3px rgba(25, 182, 152, 0.67); border-radius: 50px}
+
+
+
+
+
+/* ------- h1,h2,h3,h4,h5 ------ */
+h1{
+    font-size: 50px!important
+}
+
+a{
+    color: #c0392b!important;
+}
+
+a:focus, a:hover {
+    color: #e74c3c!important;
+}
+
+
+li a h2 {
+    color: #3a6da5;
+    border-bottom: none!important;
+    padding: none!important;
+    margin: 0px!important;
+}
+
+h2{
+    color: #19b698!important;
+    font-size: 28px;
+    text-align:center;
+    text-transform: uppercase;
+    padding: 10px;
+    border-bottom: solid 1px  #3498db;
+
+
+}
+
+h3{
+    color:  #19b698!important;
+}
+
+.redColor{font-weight: bold;color: #e74c3c;}
+.greenColor{font-weight: bold;color: #2ecc71;}
+.blueColor{font-weight: bold;color: #3498db;}
+.purpleColor{font-weight: bold;color: #9b59b6;}
+.yellowColor{font-weight: bold;color: #f1c40f;}
+
+.describeText{
+    background: rgba(255, 255, 255, 0.825);
+    padding: 2px 10px;
+    /*border-radius: 10px;*/
+    border: solid 2px #3498db;
+    line-height: 50px;
+}
+
+    input#user1Name::placeholder, input#user2Name::placeholder, input#mainTime::placeholder, input#turnTime::placeholder {
+        color: rgba(85, 85, 85, 0.8);
+        opacity: 1;
+        font-size: 15px;
+    }
+    .inputTimeTitle{
+        color: #19b698!important;
+        text-shadow: rgba(25, 182, 152, 0.35) 2px 2px 1px;
+    }
+    h4.media-heading.userInputHeaderTitle.user1Name {
+        text-shadow: rgba(52, 152, 219, 0.5) 2px 2px 1px;
+    }
+    h4.media-heading.userInputHeaderTitle.user2Name {
+        text-shadow: rgba(142, 68, 173, 0.5) 2px 2px 1px;
+    }
+
+.uppercaseFont{
+	text-transform: uppercase;
+}
+
+.menuTitle{
+	font-size: 20px;
+	padding: 5px 0;
+	color: #19b698;
+	border-bottom: solid 1px #dddddd;
+}
+h2.notifTimeUp{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 15px;
+    padding-top: 0px!important;
+}
+.modalTitleHeader{color: #19b698!important;border-bottom:none; text-align: center!important;}
+
+.authTitleHeader {
+    color: #19b698!important;
+    text-align: center!important;
+    padding: 20px!important;
+    background: rgba(255, 255, 255, 0.5)!important;
+    margin-bottom: 50px!important;
+    border-radius: 50px!important;
+    border-bottom:  none!important;   
+}
+
+#user1Name, .user1Name{
+	color: #3498db!important;
+}
+#user2Name, .user2Name{
+	color: #8e44ad!important;
+}
+.namePlayer{
+	padding: 0px;
+    color: #fff;
+    margin-top: 10px;
+
+}
+
+.user1Namecolorbox{background-color: #3498db!important;color:#fff; border: solid 1px #127bc1;}
+.user2Namecolorbox{background-color: #8e44ad!important;color:#fff; border: solid 1px #931ec3;}
+.user1NameBackground{background-color: #3498db!important;}
+.user2NameBackground{background-color: #8e44ad!important;}
+
+.scoreBox{
+	font-size: 20px;
+	padding: 10px
+}
+.userInputHeaderTitle{text-align: left;text-shadow: none;}
+
+.playerTurnMenuTitle{ background: #ccc;color: #19b698;
+	    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px;
+}
+.playerTurnTimeMenuTitle{
+	background: #ccc;color: #19b698;
+	text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px;    
+}
+.turnScoreBox{text-align: center;font-size: 35px;    border: solid 1px #ccc;color: #19b698}
+.questBox{background: #f9f9f9;text-align: center;margin-bottom: 5px!important;}
+.inputAnswer{margin-bottom: 5px!important;}
+
+#questPrint{margin: 0px;padding: 10px;font-size: 20px}
+#usernameTurnPrint{text-align: left;margin: 0px;padding: 0px;}
+b#usernameTurnPrint{text-align: left!important;}
+.headerTurn{border-bottom: 1px solid #ccc;padding: 5px 0px;margin: 5px 0px;}
+.menuPanelTitle{color: #19b698;padding: 5px 0!important; margin: 0px;}
+/* ------- h1,h2,h3,h4,h5 ------ */
+
+/* ------- nav ------ */
+nav{
+    margin-bottom: 0px!important;
+}
+
+.navbar-inverse {
+    background-image: none!important;
+    background:  #2e95d9!important;
+    border-bottom: solid 1px #97b7d9!important;
+    color: #fff;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #fff!important;
+        font-size: 14px;
+    font-weight: bold;
+}
+
+.navbar-inverse .navbar-brand{
+    color: #fff!important;
+}
+
+.navbar-brand{
+    font-size: 20px;
+}
+
+.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover{
+    background: #97b7d9!important;
+    color :#c0392b!important;
+}
+
+.nav-tabs>li>a{
+    color:#c0392b!important;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: #fff!important;
+}
+
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+    background-color: #337ab7!important;
+    color: #337ab7!important;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #fff!important;
+}
+/* ------- nav ------ */
+
+
+
+img.media-object.playerImg{
+    width: 64px;height: 64px!important;
+}
+
+
+
+/* ------- footer ------- */
+        iframe{
+        border: none;
+        overflow: hidden;
+        height: 380px;
+        width: 100%
+        }
+        .contactButton li a{padding: 5px 8px; font-size: 25px!important;}
+        .contactButton li a:hover{}
+        .contactButton li{display: inline; list-style: none; width: 20px;height: 20px;}
+
+    .footer {
+        background: #97b7d9;
+        padding: 20px 10px;
+    }
+
+    .footerLogoTitle{
+        padding: 5px 12px;
+        border-bottom: solid 2px #2e95d9!important;
+    }
+    .marginRemove{
+        margin: 0px!important
+    }
+    .footer-wrapper {
+        border-top: solid 2px #2e95d9;
+        background-color: #2e95d9;
+        width: 100%;
+        float: left;
+        color: #fff;
+        padding-bottom: 15px;
+    }
+    .footerNavi{margin: 10px 0px    }
+    .footerText {padding: 15px 0 0px;font-weight: bold;}
+    .footerTitle{font-weight: bold;font-size: 15px;margin-bottom: 10px;text-transform: uppercase;}
+    .footerdiscribe{text-transform: capitalize;padding: 0px 28px;font-size: 12px;}
+    .footerBody ul li a{color: #fff;font-size: 15px}
+    .footerBody ul li{list-style: none;}
+    .footerBody ul{padding: 0 10px;}
+    img.media-object.img-circle {border: solid 2px #2e95d9;}
+/* ------- footer ------- */
+
+
+/* ------ content ------- */
+#howto{background: #e8e8e8; padding-top: 0px;}
+/* ------ content ------- */
+
+/*-- content --*/
+#home {
+    padding: 180px;
+    background-image: url(../img/bgmode.png);
+    background-size: 100% 100%;
+    border-bottom: #3498db solid 2px;
+    height: 100%!important;
+}
+
+.infoabout {
+    line-height: 40px;
+    font-size: 18px;
+    padding: 30px;
+
+    margin: 0px!important;
+}
+/*-- content --*/
+
+/*-- button --*/
+.btnPage{
+    background: #2ecc71;
+    padding: 0 20px;
+    color: #fff;
+    font-weight: bold;
+    border: solid 1px #28bc70!important;
+}
+.btnPage:hover{
+    background: #00a546!important;
+}
+.framePage{margin:25px 0px;}
+.buttonStart.buttonOther{margin: 26px 0; background-color: #3498db!important; color: #fff;}{margin: 26px 0; background-color: #3498db!important; color: #fff;}
+.buttonOther{ background-color: #3498db!important; color: #fff;}
+.buttonOther:hover, .buttonOther:focus{ background: #ddd!important; color: #19b698!important;border:solid 1px #ccc;}
+.buttonAnswer{padding: 10px}
+.btn{border-radius: 0px!important;}
+.playButton {padding: 300px 0;}
+.otherButtonPadding{padding: 8px 10px!important}
+.user1NameButton{background-color: #3498db!important;color:#fff; border: solid 1px #127bc1;} 
+.user2NameButton{background-color: #8e44ad!important;color:#fff; border: solid 1px #931ec3;}
+.user1NameButton:hover, .user1NameButton:focus{background: #ddd!important; color: #19b698!important; border:solid 1px #ccc;}
+.user2NameButton:hover, .user2NameButton:focus{background: #ddd!important; color: #19b698!important;border:solid 1px #ccc;}
+.turnButton{margin: 28px 0;}
+/*-- button --*/
+
+
+/*-- 1024px --*/
+    @media screen and (max-width: 1024px){
+        #home{height: 450px!important;padding: 150px}
+        h1{font-size: 45px!important}
+        h2{font-size: 28px!important}
+        .describeText{font-size: 22px!important}
+    }
+/*-- 1024px --*/
+
+/*-- 800px --*/
+    @media screen and (max-width: 800px){
+        #home{height: 400px!important;padding: 120px}
+        h1{font-size: 40px!important}
+        h2{font-size: 26px!important}
+        .describeText{font-size: 20px!important}
+    }
+/*-- 800px --*/
+
+/*-- 724px --*/
+    @media screen and (max-width: 724px){
+        #home{height: 350px!important;padding: 90px}
+        h1{font-size: 36px!important}
+        h2{font-size: 24px!important}
+        .describeText{font-size: 18px!important}
+    }
+/*-- 724px --*/
+
+
+/*-- 600px --*/
+    @media screen and (max-width: 600px){
+        #home{height: 250px!important;padding: 70px}
+        h1{font-size: 32px!important}
+        .describeText{font-size: 15px!important}
+    }
+/*-- 600px --*/
+
+/*-- 530px --*/
+    @media screen and (max-width: 530px){
+        #home{height: 200px!important;padding: 40px}
+        h1{font-size: 28px!important}
+        .describeText{font-size: 15px!important}
+    }
+/*-- 530px --*/
+
+/*-- 440px --*/
+    @media screen and (max-width: 440px){
+        #home{height: 200px!important;padding: 20px}
+        h1{font-size: 26px!important}
+        .describeText{font-size: 14px!important}
+    }
+/*-- 440px --*/
+
+
+/*-- 400px --*/
+    @media screen and (max-width: 400px){
+        #home{height: 200px!important;padding: 20px}
+        h1{font-size: 26px!important}
+        .describeText{font-size: 14px!important}
+        h3{margin: 0px!important;padding: 0px}
+    }
+/*-- 400px --*/
+
+/*-- 360px --*/
+    @media screen and (max-width: 360px){
+        #home{height: 200px!important;padding: 20px}
+        h1{font-size: 22px!important; margin: 42px 0px 0px!important; }
+        .describeText{font-size: 14px!important;}
+        h3{margin: 0px!important}
+    }
+/*-- 360px --*/
+

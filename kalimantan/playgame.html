@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="kaliMantan Multiplication Game">
+		<meta name="author" content="d.Kusumandaru, Ichiri Arima, ryunoskearima">
+		<link rel="icon" href="./assets/img/kaliMantan.png">
+
+		<title>GamePlay | kaliMantan</title>
+
+		<!-- external CSS -->
+		<link href="./assets/css/myCostume.css" rel="stylesheet">
+		<link href="./assets/css/loaderCostume.css" rel="stylesheet">
+        <script src="./assets/js/myGameEngine.js"></script>
+
+		<link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="./assets/css/font-awesome.css">
+		<link rel="stylesheet" href="./assets/css/font-awesome.min.css">
+		<!--
+			<link rel="stylesheet" href="./assets/css/costume.css">
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVxV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIxwl/Sp" crossorigin="anonymous">
+		-->
+	</head>
+	<body onload="load()">
+		<!-- loader -->
+			<div id="loading">
+				<div class="logo"></div>
+				<span class="loader"></span>
+				<div class="logoPosision">
+					<span><b class="textLogo">SkyLight_Animation</b></span>
+				</div>
+			</div>
+		<!-- loader -->
+
+		<!-- Navigasi bar -->
+			<nav class="navbar navbar-inverse navbar-static-top">
+				<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="./index.html"><span class="redColor">kali</span>Mantan</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="./index.html#home"><i class="fa fa-home"></i>&ensp;Home</a></li>
+						<li><a href="./index.html#about"><i class="fa fa-copy"></i>&ensp;About</a></li>
+						<li><a href="./index.html#howto"><i class="fa fa-cog"></i>&ensp;How To</a></li>
+						<li><a href="./index.html#contact"><i class="fa fa-envelope"></i>&ensp;Contact Us</a></li>
+						<li><a href="http://kelompok5-web.esy.es/"><i class="fa fa-play"></i>&ensp;Old Version</a></li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="./playgame.html"><i class="fa fa-play"></i>&ensp;Play</a></li>
+					</ul>
+				</div>
+				</div>
+			</nav>
+		<!-- Navigasi bar -->
+				
+		<!--GamePlay-->
+
+				<div class="gamePage" >
+					<div id="userAuth" class="col-md-12">
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
+
+
+				              <!-- Wrapper for slides -->
+				              <div class="carousel-inner">
+				              	<div class="item active">
+				                <img src="./assets/img/blankMap01.png" height="100%">
+				                    <div id="userInput" class="carousel-caption" >
+				                       			<div class="col-md-12 playButton" id="startButton">
+										<center>
+											<button class="btn btn-primary btn-lg" data-toggle="modal" onclick="nextInput()">
+											  <i class="fa fa-play"></i>
+											</button>
+										</center>
+									</div>
+				         
+				                  </div>
+				                </div>
+
+				                <div class="item">
+				                <img src="./assets/img/blankMap01.png">
+				                    <div id="userInput" class="carousel-caption" >
+				                        <center><h2 class="authTitleHeader" id="play_ModalLabel"><b><i class="fa fa-user"></i>&ensp;USERNAME&ensp;<i class="fa fa-user"></i></b></h2></center>
+										<form id="insert_User" class="col-md-12">
+											<div class="media">
+												  <p class="pull-left">
+													<img class="media-object" data-src="" src="./assets/img/player1.png">
+												  </p>
+												  <div class="media-body">
+													<h4 class="media-heading userInputHeaderTitle user1Name">Player 1: </h4>
+														<input  type="name" name="name" placeholder="name" value="" id="user1Name" placeholder="name" style="width:100%" class="myform-control">
+													<div class="media">
+													  <p class="pull-left">
+														<img class="media-object" data-src="" src="./assets/img/player2.png">
+													  </p>
+													  <div class="media-body">
+														<h4 class="media-heading userInputHeaderTitle user2Name">Player 2: </h4>
+
+														<input type="name" name="name" placeholder="name" value="" id="user2Name" placeholder="name" style="width:100%" class="myform-control">
+													  </div>
+													</div>
+												  </div>
+											</div>
+										</form>
+										<button id="goTime" type="button" class="btn btn-primary" onclick="userInput()">Next <i class="fa fa-arrow-right"></i></button>
+				         
+				                  </div>
+				                </div>
+
+				               <div class="item">
+				                <img src="./assets/img/blankMap01.png">
+				                   <div class="carousel-caption"  id="timeInput">
+				                        <center><h2 class="authTitleHeader" id="play_ModalLabel"><b><i class="fa fa-user"></i>&ensp;TIME&ensp;<i class="fa fa-user"></i></b></h2></center>
+										<form id="insert_User" class="col-md-12">
+											<div class="media">
+												  <p class="pull-right">
+													<img class="media-object imageTimer" data-src="" src="./assets/img/timer1.png" width="80px">
+												  </p>
+												  <div class="media-body">
+													<h4 class="media-heading userInputHeaderTitle user1Name"><b class="inputTimeTitle">Main Timer: </b></h4>
+														<input  type="number" name="Main Timer" id="mainTime" placeholder="300" style="width:100%" class="myform-control">
+														
+													<div class="media">
+													  <p class="pull-right">
+														<img class="media-object imageTimer" data-src="" src="./assets/img/timer2.png" width="80px">
+													  </p>
+													  <div class="media-body">
+														<h4 class="media-heading userInputHeaderTitle user2Name"><b class="inputTimeTitle">Turn Timer: </b></h4>
+														<input  type="number" name="Turn Timer" id="turnTime" placeholder="20" style="width:100%" class="myform-control">
+														
+													  </div>
+													</div>
+												  </div>
+											</div>
+										</form>
+										<button id="goGame" type="button" class="btn btn-primary" onclick="timeInput()">Next <i class="fa fa-arrow-right"></i></button>
+				         
+				                  </div>
+				                </div>
+
+
+						</div>
+					</div>
+				</div>
+
+
+					<div class="col-md-12" id="gamePage">
+						<div class="col-md-8">
+							<div class="col-md-12 questForm" id="turnPlayerPanel">
+										<div class="col-md-12 headerTurn">
+											<h3 class="col-md-9 menuPanelTitle"><b id="usernameTurnPrint"></b>'s Turn </h3>
+											<div class="col-md-3 paddingRemove">
+												<div class="turnTimerBox"><div id="turnTimePrint">0</div>
+												</div>
+											</div>
+										</div>
+									<div class="col-md-12  paddingRemove" id="bodyTurnRun">
+										<div class="col-md-9">
+											<div class="questBox col-md-12 paddingRemove">
+												<p id="questPrint"></p>
+
+											</div>
+											<div class="inputAnswer col-md-12 paddingRemove">
+												<form id="answerForm">
+													<input class="col-md-10 myform-control" placeholder="answer" id="answer">
+													<button class="col-md-2 btn buttonOther" id="answerButton" type="button" onclick="answerCheck() ">Answer</button>
+												</form>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<div class="row"><div class="playerTurnMenuTitle">Point</div>
+												<div class="turnScoreBox"><p id="turnScoreBox">0</p></div>
+											</div>
+										</div>
+									</div>
+
+									<!--time over page panel-->
+								<div class="col-md-12  paddingRemove" id="bodyTurnOver">
+									<center><h2 class="notifTimeUp">Time's Up</h2>Your turn is over,<br>
+									<b class="uppercaseFont">Congratulation</b> you got <b><u id="point"></u>&ensp;point</b></center>
+
+								</div>
+
+							</div>
+
+
+
+							<div class="col-md-12 questForm" id="turnStartPanel">
+								<div class="col-md-12 headerTurn">
+									<h3 class="col-md-9 menuPanelTitle" id="usernameTurnPrint">KaliMantan </h3>
+								</div>
+								<div class="col-md-12 paddingRemove" id="firstFrame">
+									<p class="paragraf col-md-8">Welcome to <b>Kalimantan Multiplication Game</b>,<br>
+										click start Button start to play game.
+									</p><button class="btn buttonOther buttonStart btn-lg col-md-4" onclick="goPlay()">Start  <b class="fa fa-play"></b></button>
+								</div>
+								<div class="col-md-12 paddingRemove" id="secondFrame">
+									<div class="media">
+									  <a class="pull-left">
+									    <img class="media-object"  class="col-md-2" src="./assets/img/player1.png">
+									  </a>
+									  <div class="media-body">
+									    <h4 class="media-heading"><b id="firstPlayerPrint"></b> Turn</h4>
+									    Click <b>Player 1 Turn</b> button on RUN QUEST menu to runing question for the player one.
+									  </div>
+									</div>
+								</div>
+
+
+								
+							</div>
+
+						
+						
+						<div class="col-md-12 gameBox">
+
+							<div width="440px">
+								<canvas id="background" width="440" height="430"></canvas>
+							</div>
+
+						</div>
+					</div>
+
+						<!-- rightbar menu -->
+						<div class="col-md-4 option">
+							<div class="thumbnail box">
+								<div class="menuTitle"><i class="fa fa-clock-o"></i>&ensp;TIMER&ensp;<i class="fa fa-clock-o"></i></div>
+								<div class="menu_content">
+									
+									<div class="mainTimerBox"><p id="mainTimePrint">0</p></div>
+
+									<!--<p id="point"></p>-->
+
+
+								</div>
+
+							</div>
+
+							<div class="thumbnail box">
+								<div class="menuTitle"><i class="fa fa-compass"></i>&ensp;RUN QUEST&ensp;<i class="fa fa-compass"></i></div>
+								<div class="menu_content">
+								  <div id="questSelect">
+								  
+									  <center>
+										<button id="player1ButtonTurn" class="btn user1NameButton turnButton btn-lg" data-toggle="modal" data-target="#soal" onclick="questPlayer1()">
+										  Player 1 Turn
+										</button>
+										<button id="player2ButtonTurn" class="btn user2NameButton turnButton btn-lg" data-toggle="modal" data-target="#soal" onclick="questPlayer2()">
+										  Player 2 Turn
+										</button>
+									  </center>
+
+								  </div>
+								</div>
+							</div>
+							<div class="thumbnail box">
+								<div class="menuTitle"><i class="fa fa-trophy"></i>&ensp;SCORE&ensp;<i class="fa fa-trophy"></i></div>
+								<div class="menu_content scoreBoxForm">
+									<div class="col-md-6">
+									<div class="box-player1">
+										<div class="namePlayer user1NameBackground">
+											<b><div id="user1NamePrint"></div></b>
+										</div>
+										<div class="userScore">
+											<p class="user1Namecolorbox scoreBox" id="scorePlayer1">0</p>
+										</div>
+									</div>
+									</div>
+									<div class="col-md-6">
+									<div class="box-player2">	
+										<div class="namePlayer user2NameBackground">
+											<b><div id="user2NamePrint"></div></b>
+										</div>
+										<div class="userScore">
+											<p class="user2Namecolorbox scoreBox" id="scorePlayer2">0</p>
+										</div>
+									</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<!-- rightbar menu -->
+					</div>
+
+				</div>	
+
+
+				<!-- modal after play -->
+				<div class="modal fade " id="afterplayPage" tabindex="-1" role="dialog" aria-labelledby="ScoreModalLabel" aria-hidden="true">
+						<div class="modal-dialog scorePage">
+						<div class="modal-content finalScorePage">
+							<div class="modal-header">
+								<h2 class="modal-title modalTitleHeader" id="play_ModalLabel"><b><i class="fa fa-trophy"></i>&ensp;CONGRATULATION&ensp;<i class="fa fa-trophy"></i></b></h2>
+							</div>
+
+								<div class="modal-body">
+									<div class="col-md-3"></div>
+									<div class="col-md-6 scoreForm">
+										<center>
+											<h1><b id="usernameTurnFinalPrint">Blank</b></h1>
+											<br>
+											<h4 id="scoreFinalTitle">score : </h4><h3 id="scoreFinal"> 0</h3>
+
+										</center>
+										<div><center>
+											<button class="btnPage otherButtonPadding" onclick="goHome();"><b class="fa fa-home"></b>&ensp;HOME</button>
+											<button onclick="goReset();" class="btnPage otherButtonPadding"><b class="fa fa-undo"></b>&ensp;RESET</button>
+											<button onclick="goUser();" class="btnPage otherButtonPadding"><b class="fa fa-user-plus"></b>&ensp;NEW USER</button>
+										</center></div>
+									</div>
+									<div class="col-md-3"></div>
+								</div>
+						</div>
+						</div>
+				</div>
+
+				</div>
+		<!--GamePlay-->
+
+		<!-- footer -->
+			<div class="footer-wrapper">
+				<div class="col-md-12 col-sm-12 footerText"><center>Copyright &copy; 2017-2018 
+					<a href="https://www.SkyLightAnimation.github.io/kalimantan/index.html">SkyLight_Animation</a></center>
+				</div>
+			</div>
+		<!-- footer -->
+
+		<script src="./assets/js/jquery.min.js"></script>
+		<script src="./assets/js/loader.js"></script>
+		<script src="./assets/js/bootstrap.min.js"></script>
+	</body>
+</html>
+
+

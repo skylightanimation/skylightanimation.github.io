@@ -1,0 +1,67 @@
+/*how to carousel*/
+.noteBox{line-height: 40px!important; padding: 25px 15px; vertical-align: middle; background: rgba(255, 255, 255, 0.95);font-size: 24px!important;color:  #19b698!important}
+h3 p {line-height: 40px!important; padding: 25px 15px; vertical-align: middle; background: rgba(255, 255, 255, 0.95);}
+.carousel-indicators{position: relative!important;padding: 0px!important}
+.carouselBackground{background-position:center!important;background-image: url(../../assets/img/backgroundNone.png)!important;min-height: auto!important;background-repeat: no-repeat!important;height: 350px!important}
+.carousel-indicators li {
+	display: inline-block!important;
+	width: auto!important; 
+	height: auto!important; 
+	margin: 0px!important;
+	text-indent: 0px!important;
+	cursor: pointer!important;
+	border-radius: 0px!important;
+	border: 9px!important;
+	padding: 10px 25px!important;
+}
+
+.carousel-indicators {
+	top: 0px!important;
+	left: 0!important;
+	z-index: 0!important;
+	width: 100%!important;
+	padding-left: 0!important;
+	margin-left: 0!important;
+	text-align: center;
+	margin: 0px!important;
+	background: #e8e8e8;
+	border-top: #f9f9f9 solid 2px;
+}
+.carousel-indicators .active {
+	width: 12px;
+	height: 12px;
+	margin: 0;
+	color: #555;
+	cursor: default;
+	background-color: #f9f9f9;
+	border-bottom-color: transparent!important;
+}
+
+div.attributeHowto.carousel-caption{position: relative!important;z-index: 0!important; top: 0px;right: 0px!important;left: 0px!important;padding:10px 0px!important}
+img.howtoBackgroud{height:  auto!important; margin: 0px 6%;width: 88%;}
+.fa-angle-right{color: #3498db;font-size: 32px!important;font-weight: bold!important;}
+.sildeText{top: 0px!important;font-weight: bold;font-size: 10px;color: #3498db;}
+
+.oneLine{top: 90px;right: 0px; left: 0px; bottom: 0px;}
+.twoLine{top: 100px;right: 0px; left: 0px; bottom: 0px;}
+.threeLine{top: 70px;right: 0px; left: 0px; bottom: 0px;}
+.fourLine{top: 50px;right: 0px; left: 0px; bottom: 0px;}
+.fiveLine{top: 30px;right: 0px; left: 0px; bottom: 0px;}
+.sixLine{top: 10px;right: 0px;left: 0px;bottom: 0px;padding: 5px 5px;}
+@media screen and (max-width: 700px){
+	 .carouselBackground{min-height: 600px!important;background-image: url(../../assets/img/backgroundNoneVertical.png)!important;background-position:center;background-repeat: no-repeat;background-size: 100% }
+   .oneLine, .twoLine, .threeLine, .fourLine, .fiveLine, .sixLine{top: 0px!important;right: 0px; left: 0px; bottom: 0px;}
+   .noteBox{font-size: 20px}
+}
+
+@media screen and (max-width: 1199){
+  .carouselBackground{min-height: 100%!important}
+  .noteBox{font-size: 25px}
+}
+
+@media screen and (max-width: 1008px){
+  .carouselBackground{min-height: 100%!important;height: 100%!important;background-image: url(../../assets/img/backgroundNoneVertical.png)!important;background-position:center;background-repeat: no-repeat;background-size: 100% }
+   .oneLine, .twoLine, .threeLine, .fourLine, .fiveLine, .sixLine{top: 0px!important;right: 0px; left: 0px; bottom: 0px;}
+   .noteBox{font-size: 28px}
+}
+/*how to carousel*/
