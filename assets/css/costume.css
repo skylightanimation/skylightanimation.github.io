@@ -148,37 +148,41 @@ a.btn-contact.blogger{background-color: transparent!important;color: #ff5722!imp
 	    background: #fff;
 	}
 	.bg-kalimantan{
-		background-image: url(../img/SkyLight_Animation_kaliMantan.png);
+		background-image: url(https://skylightanimation.github.io/kalimantan/assets/img/HowTo/09.png);
 	    background-repeat: no-repeat;
 	    height: 215px;
-	    background-size: cover;
-	    background-position-y: -54px;
+	    background-size: 200%;
+   		background-position-y: -47px;
+   		background-position-x: -40px;
 	     opacity: 0.25
 	}
 
 	.bg-fasttyping{
-		background-image: url(../img/SkyLight_Animation_fasttype-logo.png);
+		background-image: url(https://img.itch.zone/aW1hZ2UvMzk1MzUxLzM1MDcyOTIucG5n/original/wgx1rT.png);
 	    background-repeat: no-repeat;
 	    height: 215px;
 	    background-size: cover;
-	    background-position-y: -54px;
+	    background-position-y: -23px;
 	   	opacity: 0.25
 	}
 
 	.bg-aksarajawa{
-		background-image: url(../img/SkyLight_Animation_aksara-jawa.png);
+		background-image: url(https://img.itch.zone/aW1hZ2UvMjc5Mzg0LzEzNjM2MjAucG5n/original/Rho%2BGa.png);
 	    background-repeat: no-repeat;
 	    height: 215px;
-	    background-size: cover;
-	    background-position-y: -54px;
+		background-size: cover;
+   		background-position-y: -0px;
+   		background-position-x: -66px;
 	   	opacity: 0.25		
 	}
+
+
 
 	img.row-content-logo {
 	    width: 60px;
 	    border-radius: 5px;
 	    border: solid 1px #ccc;
-	    background: #dedede;
+	        background: #f9f9f9;
 	    position: absolute;
     	top: 35px;
     	left: 45px;
@@ -186,8 +190,10 @@ a.btn-contact.blogger{background-color: transparent!important;color: #ff5722!imp
 
 	.row-content-header h2{
 	    position: absolute;
-	    top: 85px;
+
 	    padding: 15px;
+	    top: 120px;
+   		line-height: 24px;
 	}
 
 	.row-content-header  div.date{
@@ -303,12 +309,24 @@ div.social-icon a{
 
 /*-- responsive--*/
 
+@media only screen and (min-width: 768px)  {
+
+	.lead {
+    font-size: 17px!important;
+	}
+
+	.text-muted{
+		font-size: 18px!important;
+	}
+}
+
 
 
 @media only screen and (max-width: 750px)  {
 	.logo-header{
 		 top: 18%!important;
 	}
+
 }
    
 @media only screen and (max-width: 650px)  {
