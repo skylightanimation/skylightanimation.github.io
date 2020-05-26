@@ -13,12 +13,16 @@ Text Domain: http://skylightanimation.github.io
 .header img.background{opacity: 0.5}
 .header {margin-top:51px;}
 .navbar-header{z-index: 9999}
-.logo-header{
-	position: absolute;
-    left: 39%;
+.logo-header {
+    position: absolute;
+    left: 34%;
     z-index: 6;
-    top: 120px;
-    width: 21%;
+    top: 22%;
+    width: 32%;
+    background: rgba(247, 247, 247, 0.6);
+    border-radius: 150px;
+    padding: 15px;
+    border: solid 1px #eaeaea;
 }
 /*.title-header{
 	position: absolute;
@@ -135,6 +139,128 @@ a.btn-contact.blogger{background-color: transparent!important;color: #ff5722!imp
 	.btn-contact{
 		font-size: 25px
 	}
+
+	.row-content-header {
+	    border-bottom: solid #fff 3px;
+	    border: solid 1px #ccc;
+	    border-radius: 10px;
+	    margin: 20px 15px;
+	    background: #fff;
+	}
+	.bg-kalimantan{
+		background-image: url(../img/SkyLight_Animation_kaliMantan.png);
+	    background-repeat: no-repeat;
+	    height: 215px;
+	    background-size: cover;
+	    background-position-y: -54px;
+	     opacity: 0.25
+	}
+
+	.bg-fasttyping{
+		background-image: url(../img/SkyLight_Animation_fasttype-logo.png);
+	    background-repeat: no-repeat;
+	    height: 215px;
+	    background-size: cover;
+	    background-position-y: -54px;
+	   	opacity: 0.25
+	}
+
+	.bg-aksarajawa{
+		background-image: url(../img/SkyLight_Animation_aksara-jawa.png);
+	    background-repeat: no-repeat;
+	    height: 215px;
+	    background-size: cover;
+	    background-position-y: -54px;
+	   	opacity: 0.25		
+	}
+
+	img.row-content-logo {
+	    width: 60px;
+	    border-radius: 5px;
+	    border: solid 1px #ccc;
+	    background: #dedede;
+	    position: absolute;
+    	top: 35px;
+    	left: 45px;
+	}
+
+	.row-content-header h2{
+	    position: absolute;
+	    top: 85px;
+	    padding: 15px;
+	}
+
+	.row-content-header  div.date{
+		font-size: 18px;
+	    position: absolute;
+	    top: 35px;
+	    right: 45px;
+	    background: rgba(216, 216, 216, 0.47843137254901963);
+	    padding: 5px 8px;
+	    border-radius: 5px;
+    }
+
+	.row-content-item {
+	    padding: 0px 30px 25px;
+	}
+
+	.project-row-odd-small{
+		background: #444;
+	    color: #fff;
+	    padding: 5px;
+	    border-radius: 15px;
+	    border: solid #f3f3f3 1px;
+	    margin-bottom: 20px;
+	}
+
+	.project-row-even-small{
+		background: #fff;
+	    color: #222;
+	    padding: 5px;
+	    border-radius: 15px;
+	    border: solid #ccc 1px;
+	    margin-bottom: 20px;
+	}
+
+
+	.project-row-odd-small div.row-content-header div.date {
+   		background: #909090;
+	}
+	.project-row-odd-small h2.featurette-heading {
+	    color: #222;
+	}
+
+	.contributor-content{margin-bottom: 20px}
+	
+	.contributor-content-odd {
+		background: #f3f3f3;
+	    border-radius: 20px;
+	    padding: 30px 15px;
+	    border: solid 1px #ccc;
+    }
+
+    .contributor-content-even {
+	    border: solid 1px #f3f3f3;
+	    border-radius: 15px;
+	    padding: 30px 15px;
+	}
+	.contributor-content-odd div.media {
+	    border-bottom: solid #a5a5a5 1px;
+	    background: #ffffff;
+	    border-bottom: solid #b7b7b7 2px;
+	}
+	.contributor-content-even div.media {
+		border-radius: 10px;
+   		background: #f3f3f3;
+   		border-bottom: solid 2px #eee;
+   	}
+
+	.media{
+		border-radius: 10px;
+		width: 100%;
+    	
+    	padding: 0 0 12px;
+	}
 /*-- content --*/
 
 
@@ -173,3 +299,99 @@ div.social-icon a{
 
 
 /*-- footer ---*/
+
+
+/*-- responsive--*/
+
+
+
+@media only screen and (max-width: 750px)  {
+	.logo-header{
+		 top: 18%!important;
+	}
+}
+   
+@media only screen and (max-width: 650px)  {
+	img.logo-header {
+    	top: 17%;
+   		padding: 5px 10px;
+	}
+}
+
+
+@media only screen and (max-width: 600px)  {
+	#about-content{
+		font-size: 18px!important;
+		line-height: 38px!important;
+	}
+	.logo-header{
+		top: 16%!important;
+	}
+}
+
+
+@media only screen and (max-width: 500px)  {
+	#about-content{
+		font-size: 14px!important;
+		line-height: 28px!important;
+	}
+	.logo-header{
+		top: 14%!important;
+	}
+	h1 {
+	    font-size: 25px!important;
+	    margin: 10px 0 5px!important;
+	}
+
+	.container.marketing {
+	    padding: 35px 25px!important;
+	}
+
+	.project-row-odd p, .project-row-odd blockquote, .project-row-even p, .project-row-even blockquote  {
+	    font-size: 14px!important;
+	}
+
+
+	a.btn.btn-lg{
+    font-size: 18px!important;
+    margin: 0 10px!important;
+    padding: 5px 8px 3px!important;
+	}
+
+	h2 {
+	    font-size: 20px!important;
+	}
+	h2 span.text-muted {
+	    font-size: 18px!important;
+	}
+
+}
+
+
+@media only screen and (max-width: 400px)  {
+	#about-content{
+		font-size: 12px!important;
+		line-height: 28px!important;
+	}
+	.logo-header{
+		top: 13%!important;
+	}
+
+	.project-row-odd p, .project-row-odd blockquote, .project-row-even p, .project-row-even blockquote  {
+	    font-size: 12px!important;
+	}
+
+}
+
+
+@media only screen and (max-width: 300px)  {
+	#about-content{
+		font-size: 12px!important;
+		line-height: 28px!important;
+	}
+	.logo-header{
+		top: 10%!important;
+	}
+}
+
+/*-- responsive--*/
