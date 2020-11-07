@@ -55,13 +55,13 @@ body{
 .btn-github:hover{
 	background:#000000!important;
 }
-
 a.btn.btn-lg.github{background: #24292e!important; color: #fff!important;font-size: 25px; margin: 0 10px; padding: 5px 10px 3px;}
 a.btn.btn-lg.gravatar{background: #0a76b7!important; color: #fff!important;font-size: 25px; margin: 0 10px; padding: 5px 10px 3px;}
 a.btn.btn-lg.linkedin{background: #0073b1!important; color: #fff!important;font-size: 25px; margin: 0 10px; padding: 5px 10px 3px;}
 a.btn.btn-lg.facebook{background: #3c5a98!important; color: #fff!important;font-size: 25px; margin: 0 10px; padding: 5px 10px 3px;}
 a.btn.btn-lg.twitter{background: #1da1f2!important; color: #fff!important;font-size: 25px; margin: 0 10px; padding: 5px 10px 3px;}
 a.btn.btn-lg.blogger{background: #ff5722!important; color: #fff!important;font-size: 25px; margin: 0 10px; padding: 5px 10px 3px;}
+a.btn.btn-lg.tumblr{background: #32445a!important; color: #fff!important;font-size: 25px; margin: 0 10px; padding: 5px 10px 3px;}
 a.btn.btn-lg.pinterest{background: #b4292c!important; color: #fff!important;font-size: 25px; margin: 0 10px; padding: 5px 10px 3px;}
 a.btn.btn-lg.youtube{background: #cc0000!important; color: #fff!important;font-size: 25px; margin: 0 10px; padding: 5px 10px 3px;}
 a.btn.btn-lg.itchio{background: #FF2449!important; color: #fff!important;font-size: 25px; margin: 0 10px; padding: 5px 10px 3px;}
@@ -71,6 +71,7 @@ a.btn-contact.linkedin{background-color: transparent!important;color: #0073b1!im
 a.btn-contact.facebook{background-color: transparent!important;color: #3c5a98!important;}
 a.btn-contact.twitter{background-color: transparent!important;color: #1da1f2!important;}
 a.btn-contact.blogger{background-color: transparent!important;color: #ff5722!important;}
+a.btn-contact.tumblr{background-color: transparent!important;color: #32445a!important;}
 
 /*-- component --*/
 
