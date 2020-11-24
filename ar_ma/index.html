@@ -10,7 +10,7 @@
 	<style type="text/css">
 		body{font-family: sans-serif;font-family: sans-serif; padding: 0 0%;margin: 10px 0;}
 
-		.cover-profile{background: url(assets/img/header.png);    border: solid 2px; background-size: 100% 100%; height: 150px; border-bottom: solid 5px #c2c2c2;border-radius: 10px 10px 0px 0px}
+		.cover-profile{background: url(assets/img/header.png);	border: solid 2px; background-size: 100% 100%; height: 150px; border-bottom: solid 5px #c2c2c2;border-radius: 10px 10px 0px 0px}
 		.info-profile{background: #ccc; padding: 10px 15px 25px;border-radius: 0px 0px 10px 10px;}
 		.photo-profile{border-radius: 50%;height: 95px;width: 95px;border: solid 5px #c2c2c2;position: relative;top: -195px;}
 
@@ -86,7 +86,9 @@
 
 				<div class="info-profile">
 					<h1 class="text-decoration">ar_ma</h1>
-					<small><i>gear 1 -> accelerate</i></small>
+					<small><span class="fa fa-cog"></span> <i>gear</i> <b>::</b> <b>1 </b> <span class="fa fa-long-arrow-right"></span> <i>accelerate</i> <b>^_^</b><br>
+						<span class="fa fa-refresh"></span> <i>Learn of the Loop</i>
+					</small>
 				</div>
 				</center>
 				<center style="height: 0px;">
@@ -123,7 +125,7 @@
 			<div id="summary" class="box">
 				<div class="box-title"><h3>Summary<span class="fa  fa-exclamation-circle right"></span></h3></div>
 				<div class="box-h">
-    				<p class="summary-text">
+					<p class="summary-text">
 						Let me introduce my self my name is <b>Arma</b>.<br><br>
 
 						I'm BackEnd Website Developer (<b>PHP</b> and <b>Codeigniter</b>) and I work as a freelancer programmer since 2017. I like coding so I still learn and explore programming languages until now. <br><br>
@@ -149,13 +151,13 @@
 					<span class="fa fa-html5"></span> HTML<b class="right">78%</b><br>
 					<div class="progress">
 					  <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 78%;">
-					    
+						
 					  </div>
 					</div>
 					<span class="fa fa-css3"></span> CSS<b class="right">60%</b><br>
 					<div class="progress">
 					  <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 52%;">
-					    
+						
 					  </div>
 					</div>
 
@@ -227,60 +229,71 @@
 <script type="text/javascript">
 
 	function profile(id){
-	    var access = document.getElementById(id);
-	    var btn = 'btn-'+id;
-	    var accessBtn = document.getElementById(btn);
+		var access = document.getElementById(id);
+		var btn = 'btn-'+id;
+		var accessBtn = document.getElementById(btn);
 
-        if(access.style.display == "none") {
-           access.style.display = "block";
-           accessBtn.className += " active";
-        }else {
-            access.style.display = "none";
-            accessBtn.className = "ctrl-button";
-            //accessBtn.className += "ctrl-button";
-        }
+		if(access.style.display == "none") {
+		   access.style.display = "block";
+		   accessBtn.className += " active";
+		}else {
+			access.style.display = "none";
+			accessBtn.className = "ctrl-button";
+			//accessBtn.className += "ctrl-button";
+		}
 	}
+	function summary(id){
+		var access = document.getElementById(id);
+		var btn = 'btn-'+id;
+		var accessBtn = document.getElementById(btn);
 
+		if(access.style.display == "none") {
+		   access.style.display = "block";
+		   accessBtn.className += " active";
+		}else {
+			access.style.display = "none";
+			accessBtn.className = "ctrl-button";
+		}
+	}
 	function skill(id){
-	    var access = document.getElementById(id);
-	    var btn = 'btn-'+id;
-	    var accessBtn = document.getElementById(btn);
+		var access = document.getElementById(id);
+		var btn = 'btn-'+id;
+		var accessBtn = document.getElementById(btn);
 
-        if(access.style.display == "none") {
-           access.style.display = "block";
-           accessBtn.className += " active";
-        }else {
-            access.style.display = "none";
-            accessBtn.className = "ctrl-button";
-        }
+		if(access.style.display == "none") {
+		   access.style.display = "block";
+		   accessBtn.className += " active";
+		}else {
+			access.style.display = "none";
+			accessBtn.className = "ctrl-button";
+		}
 	}
 	function contact(id){
-	    var access = document.getElementById(id);
-	    var btn = 'btn-'+id;
-	    var accessBtn = document.getElementById(btn);
+		var access = document.getElementById(id);
+		var btn = 'btn-'+id;
+		var accessBtn = document.getElementById(btn);
 
-        if(access.style.display == "none") {
-           access.style.display = "block";
-           accessBtn.className += " active";
-        }else {
-            access.style.display = "none";
-            accessBtn.className = "ctrl-button";
-        }
+		if(access.style.display == "none") {
+		   access.style.display = "block";
+		   accessBtn.className += " active";
+		}else {
+			access.style.display = "none";
+			accessBtn.className = "ctrl-button";
+		}
 	}
 	function contributor(id){
-	    var access = document.getElementById(id);
-	    var btn = 'btn-'+id;
-	    var accessBtn = document.getElementById(btn);
+		var access = document.getElementById(id);
+		var btn = 'btn-'+id;
+		var accessBtn = document.getElementById(btn);
 
-        if(access.style.display == "none") {
-           access.style.display = "block";
-           accessBtn.className += " active";
-        }else {
-            access.style.display = "none";
-            accessBtn.className = "ctrl-button";
-        }
+		if(access.style.display == "none") {
+		   access.style.display = "block";
+		   accessBtn.className += " active";
+		}else {
+			access.style.display = "none";
+			accessBtn.className = "ctrl-button";
+		}
 	}
-
 </script>
 
 
