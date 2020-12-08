@@ -111,9 +111,26 @@
 		margin: 22.5% 44.5%;
 	}
 }
+@media screen and (max-width: 500px){
+	.logo {
+		margin: 23.6% 33.6%;
+	}
+	.loader {
+    	margin: 18.5% 30%;
+	}
+	.logoPosision {
+	    left: 24.8%;
+	}
+	.textLogo {
+	    /*position: fixed;*/
+	    /*margin-top: 36.5%;*/
+	    margin-top: 45.5%;
+	    font-size: 20px;
+	}
 
+}
 @media screen and (max-width: 424px){
 	.logo {
-	    margin: 23.6% 45.6%;
+	    margin: 22.6% 33.6%;
 	}
 }

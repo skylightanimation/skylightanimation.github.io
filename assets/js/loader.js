@@ -2,5 +2,5 @@ $(window).on('load', function() {
 	setTimeout(function(){
 		$("#loading").hide();
 		$(".loader").hide();
-	},100);
+	},1000000);
 });
