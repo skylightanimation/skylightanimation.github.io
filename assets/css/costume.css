@@ -120,6 +120,10 @@ a.btn-contact.instagram{background-color: transparent!important;color: #262626!i
 /*-- booststrap --*/
 
 /*-- content --*/
+	#home{
+		padding-top: 50px;
+	}
+
 	.container.marketing {
    		padding: 50px 25px;
 	}
@@ -415,7 +419,7 @@ div.social-icon a{
 
 	a.btn.btn-lg{
 		font-size: 18px!important;
-		margin: 0 10px!important;
+		margin: 0 10px 10px!important;
 		padding: 5px 8px 3px!important;
 	}
 
