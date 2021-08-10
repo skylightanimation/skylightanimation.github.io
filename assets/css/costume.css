@@ -71,6 +71,20 @@ body{
 /*-- header --*/
 
 /*-- component --*/
+
+a.btn-contact.btn-contact-hover:hover{
+	color: #bbb8b8!important;
+
+}
+
+
+
+a.btn.btn-lg.social-hover:hover {
+	background: #222!important;
+	border: solid 1px #000!important;
+}
+
+
 .btn-itchio{
 	background: #FF2449!important;	
 	border: #c3223e!important;
@@ -85,9 +99,14 @@ body{
 	border: #000000!important;
 }
 
-.btn-github:hover{
+.github:hover{
 	background:#000000!important;
 }
+
+.deviantart:hover{
+	background:#000000!important;
+}
+
 a.btn.btn-lg.github{background: #24292e!important; color: #fff!important;font-size: 25px; margin: 0 10px; padding: 5px 10px 3px;}
 a.btn.btn-lg.gravatar{background: #0a76b7!important; color: #fff!important;font-size: 25px; margin: 0 10px; padding: 5px 10px 3px;}
 a.btn.btn-lg.linkedin{background: #0073b1!important; color: #fff!important;font-size: 25px; margin: 0 10px; padding: 5px 10px 3px;}
@@ -98,6 +117,7 @@ a.btn.btn-lg.tumblr{background: #32445a!important; color: #fff!important;font-si
 a.btn.btn-lg.pinterest{background: #b4292c!important; color: #fff!important;font-size: 25px; margin: 0 10px; padding: 5px 10px 3px;}
 a.btn.btn-lg.youtube{background: #cc0000!important; color: #fff!important;font-size: 25px; margin: 0 10px; padding: 5px 10px 3px;}
 a.btn.btn-lg.itchio{background: #FF2449!important; color: #fff!important;font-size: 25px; margin: 0 10px; padding: 5px 10px 3px;}
+a.btn.btn-lg.deviantart{background: #43b64a!important; color: #fff!important;font-size: 25px; margin: 0 10px; padding: 5px 15px 3px;}
 
 a.btn-contact.github{background-color: transparent!important;color: #24292e!important;}
 a.btn-contact.linkedin{background-color: transparent!important;color: #0073b1!important;}
@@ -107,6 +127,7 @@ a.btn-contact.blogger{background-color: transparent!important;color: #ff5722!imp
 a.btn-contact.tumblr{background-color: transparent!important;color: #32445a!important;}
 a.btn-contact.pinterest{background-color: transparent!important;color: #b4292c!important;}
 a.btn-contact.instagram{background-color: transparent!important;color: #262626!important;}
+a.btn-contact.deviantart{background-color: transparent!important;color: #43b64a!important;}
 
 /*-- component --*/
 
