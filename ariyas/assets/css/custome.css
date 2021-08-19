@@ -1,0 +1,94 @@
+li.nav-item a.nav-link.nav-btn{
+	border: solid 1px;
+    padding: 6px 9px 5px 9px !important;
+    border-radius: 4px;
+    margin: 6px 0 !important;
+    background: #ffa41e;
+}
+
+li.nav-item a.nav-link.nav-btn:hover {
+    padding: 6px 9px 5px 9px !important;
+    background: #616060;
+    /*#ffa41e*/
+}
+
+.navbar-nav .nav-item + .nav-item {
+     margin-right: 0rem!important; 
+}
+
+li.nav-item.nav-remove-hover {
+    /*padding: 6px 9px 5px 9px !important;*/
+    background: #ff9800;
+    /*#ffa41e*/
+}
+
+button.navbar-toggler:hover, .navbar-toggler:focus, 
+button.navbar-toggler:focus {
+    outline: none;
+}
+
+
+/*.navbar-toggler:focus, 
+button.navbar-toggler:focus {*/
+/*	outline: none;
+	background: #ff9800!important;
+	color: #fff!important;
+}*/
+.navbar-toggler:hover, .navbar-toggler.active, .nav-btn.active, .navbar-toggler.active  {
+    background: #616060!important;
+    color: #fff!important;
+}
+
+
+/*.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+
+    background: #333333!important;
+}*/
+
+.navbar-ryuuichi{
+	background: #ff9800;
+	padding: 0px!important;
+}
+
+.nav-item:focus, .nav-item:hover {
+    background: #616060;
+    color: #fff;
+}
+
+.nav-link {
+	width: max-content;
+    display: block;
+    padding: .5rem 1rem;
+}
+
+li.nav-item a.nav-link {
+    color: #fff;
+}
+
+
+.nav-item{
+	color: #fff;
+    padding: 0.5rem 0.2rem;
+    /*max-width: fit-content;*/
+    display: inline;
+}
+
+.navbar-brand{
+    padding: 0.8rem 1.5rem;
+    color: #fff;
+    background: #616060;
+    margin: 0px;
+}
+.navbar-brand:hover{
+	color: #fff;
+    background: #ff9800;
+}
+
+.navbar-toggler{
+    border: solid 1px;
+    color: #fff;
+    margin-right: 15px;
+    background: #ffa41e!important;
+}
+
+
