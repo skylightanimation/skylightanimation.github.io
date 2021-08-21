@@ -2,7 +2,7 @@ li.nav-item a.nav-link.nav-btn{
 	border: solid 1px;
     padding: 6px 9px 5px 9px !important;
     border-radius: 4px;
-    margin: 6px 0 !important;
+    margin: 0.1rem 0 !important;
     background: #ffa41e;
 }
 
@@ -73,11 +73,11 @@ li.nav-item a.nav-link {
     display: inline;
 }
 
-.navbar-brand{
+.navbar-brand {
     padding: 0.8rem 1.5rem;
-    color: #fff;
-    background: #616060;
-    margin: 0px;
+    color: #fff!important;
+    background: #616060!important;
+    margin: 0px!important;
 }
 .navbar-brand:hover{
 	color: #fff;
@@ -89,6 +89,10 @@ li.nav-item a.nav-link {
     color: #fff;
     margin-right: 15px;
     background: #ffa41e!important;
+}
+
+#sidebar-wrapper {
+    background: #616060!important;
 }
 
 
