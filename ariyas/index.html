@@ -295,28 +295,39 @@ body, .body-fauxcolumn-outer {
 
 <script type="text/javascript">
 	$( document ).ready(function() {
-		try {
+		// try {
 		  	loadArticle();
-		}
-		catch(err) {
+		// }
+		// catch(err) {
 		  
-		}
+		// }
 	});
 
 	
 
 	function loadArticle(){
+
+		console.log("hello");
 		var accessUrl = "https://tenagarakyat.com/services/aria's_life/index.php";
 
 		$.ajax({
 			url: accessUrl,
-			type: 'POST',
-			dataType : 'JSON',
+			headers: {
+				// 'Access-Control-Allow-Origin': '*',
+				// 'Content-Type':'application/json'
+				'Access-Control-Allow-Credentials' : true,
+			    'Access-Control-Allow-Origin':'*',
+			    'Access-Control-Allow-Methods':'GET',
+			    'Access-Control-Allow-Headers':'application/json',
+			},
+			type: 'GET',
+			dataType : 'jsonp',
+			data : '',
+			// Access-Control-Allow-Credentials : 'true'
 			//data : {idUpdateEducation: idUpdateEducation, accessUpdateEducation : accessUpdateEducation, nameUpdateEducation : nameUpdateEducation, levelUpdateEducation : levelUpdateEducation, yearUpdateEducation : yearUpdateEducation, imgUpdateEducation : imgUpdateEducation},
 			success: function(data){
-
-
 				console.log(data);
+				console.log(data.id);
 
 			}
 		});		
