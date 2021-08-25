@@ -133,9 +133,149 @@
 							<div class="widget Blog" data-version="1" id="Blog1">
 								<div class="blog-posts hfeed row">
 
-										<div class="col-md-6 col-xs-12 col-lg-6 col-sm-12">
-											<div class="date-posts data-thumb">
-											</div>
+
+
+								<script>
+
+								function getImage(content){
+									var result = '';
+
+									var regex = /<img.*?src='(.*?)'/;
+									var src = regex.exec(content);
+									
+									if (src != null) {
+										result = src;
+									}else{
+										result = 'https://4.bp.blogspot.com/-b9kfnZlObjc/UGxyCcbigjI/AAAAAAAAFd4/xPPqLCo9uCA/s1600/no_image.jpg';
+									}
+
+									return result;									
+								}
+
+								function getContent(content){
+									var result = '';
+
+									var regex = /(<([^>]+)>)/ig
+									,   body = content
+									,   data = body.replace(regex, "");
+
+									// console.log(data);
+
+									result = data.substring(0, 150);
+
+									return result;
+								}
+
+
+
+
+								function boss(json) {
+									var numposts = 12;
+
+									for (var i = 0; i < numposts; i++) {
+
+										console.log(json.feed.entry.length);
+
+										if (json.feed.entry.length <= 12 && json.feed.entry.length > 9) {
+											if (i == 0) {
+												document.write('<div class="col-md-3 col-xs-12 col-lg-3 col-sm-12">');
+											}else if(i == 3){
+												document.write('</div>');
+												document.write('<div class="col-md-3 col-xs-12 col-lg-3 col-sm-12">');
+											}else if(i == 6){
+												document.write('</div>');
+												document.write('<div class="col-md-3 col-xs-12 col-lg-3 col-sm-12">');
+											}else if(i == 9){
+												document.write('</div>');
+												document.write('<div class="col-md-3 col-xs-12 col-lg-3 col-sm-12">');
+
+											}
+										} else if (json.feed.entry.length <= 9 && json.feed.entry.length > 6) {
+											if (i == 0) {
+												document.write('<div class="col-md-4 col-xs-12 col-lg-4 col-sm-12">');
+											}else if(i == 3){
+												document.write('</div>');
+												document.write('<div class="col-md-4 col-xs-12 col-lg-4 col-sm-12">');
+											}else if(i == 6){
+												document.write('</div>');
+												document.write('<div class="col-md-4 col-xs-12 col-lg-4 col-sm-12">');
+											}
+
+										} else if (json.feed.entry.length <= 6 && json.feed.entry.length > 3) {
+											if (i == 0 ) {
+												document.write('<div class="col-md-6 col-xs-12 col-lg-6 col-sm-12">');
+											}else if(i == 3 ){
+												document.write('</div>');
+												document.write('<div class="col-md-6 col-xs-12 col-lg-6 col-sm-12">');
+											}
+										
+										} else if (json.feed.entry.length <= 3 && json.feed.entry.length > 1) {
+											document.write('<div class="col-md-12 col-xs-12 col-lg-12 col-sm-12">');
+										}
+
+
+
+
+										// if (i > 0 || i <= 3) {
+										// 	document.write('<div class="col-md-12 col-xs-12 col-lg-12 col-sm-12">');
+										// }else if(i > 3 || i <= 6){
+										// 	document.write('<div class="col-md-6 col-xs-12 col-lg-6 col-sm-12">');
+										// }else if(i > 6 || i <= 9){
+										// 	document.write('<div class="col-md-4 col-xs-12 col-lg-4 col-sm-12">');
+										// }else if(i > 9 || i <= 12){
+										// 	document.write('<div class="col-md-3 col-xs-12 col-lg-3 col-sm-12">');
+
+										// }
+										
+
+										var entry = json.feed.entry[i];
+										var posttitle;
+										var posturl;
+										var srcImg;
+										var contentText;
+
+										if (i == json.feed.entry.length) break;
+
+											document.write('<div class="date-posts data-thumb"><div class="post-outer"><article class="post hentry">');
+											for (var k = 0; k < entry.link.length; k++) {
+
+												if (entry.link[k].rel == 'alternate') {
+													// console.log(entry.content.$t);
+
+													srcImg = getImage(entry.content.$t);
+													contentText = getContent(entry.content.$t);
+													console.log(entry.title.$t);
+													posttitle = entry.title.$t;
+
+													// $('img').attr(src);
+
+													posturl = entry.link[k].href;
+													posttitle = posttitle.link(posturl);
+
+												}
+
+											}
+											
+											document.write('<img class="post-thumbnail" src="'+srcImg+'">');
+											document.write('<h2 class="post-title">'+posttitle+'</h2>');
+											document.write('<div class="post-body entry-content"><p>'+contentText+'</p></div>');
+											document.write('</article></div></div>');
+											
+
+										}
+
+									}
+									
+
+								</script>
+
+								<script src="https://ariyaslife.blogspot.com/atom.xml?redirect=false&amp;start-index=1&amp;max-results=1000&amp;orderby=published&amp;alt=json-in-script&amp;callback=boss"></script>
+
+
+
+										
+											
+											
 										</div>
 								</div>
 							</div>
@@ -219,10 +359,12 @@
 					</div>-->
 				</div>
 				<div class="widget HTML" data-version="1" id="HTML7">
-					<img class="img-support" src="assets/img/icon/SkyLight_Animation.png">
-					<img class="img-support" src="assets/img/icon/skylight.png">
-					
-					<img class="img-support" src="assets/img/icon/LangIT_Tutorial.png">
+					<center>
+						<img class="img-support" src="assets/img/icon/SkyLight_Animation.png">
+						<img class="img-support" src="assets/img/icon/skylight.png">
+						
+						<img class="img-support" src="assets/img/icon/LangIT_Tutorial.png">
+					</center>
 				</div>
 
 
@@ -250,89 +392,3 @@
 
 	</body>
 </html>
-
-<style type="text/css">
-
-	
-
-
-/*h1, h2, h3, h4, h5, h6 {
-	font-weight: bold;
-	padding: 0;
-	color: #141414;
-	font-family: 'Open Sans Condensed',"Arial Narrow",Arial,sans-serif;
-}
-
-
-header, nav, section, aside, article, footer {
-	display: block;
-}*/
-
-/*.widget {
-	margin-bottom: 15px;
-}
-
-#header-wrapper {
-	height: 115px;
-	margin: 0 auto;
-	padding: 10px 15px 10px;
-	overflow: hidden;
-	max-width: 950px;
-	background: #fff;
-}
-
-
-html body {
-	min-width: 250px!important;
-}
-body, .body-fauxcolumn-outer {
-	background-color: #F0F0F0;
-}
-
-*/
-
-</style>
-
-<script type="text/javascript">
-	$( document ).ready(function() {
-		// try {
-		  	loadArticle();
-		// }
-		// catch(err) {
-		  
-		// }
-	});
-
-	
-
-	function loadArticle(){
-
-		console.log("hello");
-		var accessUrl = "https://tenagarakyat.com/services/aria's_life/index.php";
-
-		$.ajax({
-			url: accessUrl,
-			headers: {
-				// 'Access-Control-Allow-Origin': '*',
-				// 'Content-Type':'application/json'
-				'Access-Control-Allow-Credentials' : true,
-			    'Access-Control-Allow-Origin':'*',
-			    'Access-Control-Allow-Methods':'GET',
-			    'Access-Control-Allow-Headers':'application/json',
-			},
-			type: 'GET',
-			dataType : 'jsonp',
-			data : '',
-			// Access-Control-Allow-Credentials : 'true'
-			//data : {idUpdateEducation: idUpdateEducation, accessUpdateEducation : accessUpdateEducation, nameUpdateEducation : nameUpdateEducation, levelUpdateEducation : levelUpdateEducation, yearUpdateEducation : yearUpdateEducation, imgUpdateEducation : imgUpdateEducation},
-			success: function(data){
-				console.log(data);
-				console.log(data.id);
-
-			}
-		});		
-	}
-
-
-
-</script>

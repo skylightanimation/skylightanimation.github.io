@@ -522,7 +522,12 @@ body#layout #header2{float:left;width:55%;}
 #sidebar-wrapper .widget-content{padding:5px 0;margin:0}--*/
 h1,h2,h3,h4,h5,h6{font-weight:bold;padding:0;color:#141414;font-family:'Open Sans Condensed',"Arial Narrow",Arial,sans-serif}
 /*.date-header{display:none}*/
-.post{margin:0;padding:0}
+/*.post{margin:0;padding:0}*/
+.post {
+    margin: 0 0 20px;
+    padding: 0 0 10px;
+    height: auto;
+}
 .post h1,.post h2{margin:.0;padding:0;font-size:150%;font-weight:bold;line-height:1.4em;color:#111}
 .post h1 a,.post h1 a:visited,.post h1 strong,.post h2 a,.post h2 a:visited,.post h2 strong{display:block;text-decoration:none;color:#111;font-weight:normal}
 .post h1 strong,.post h1 a:hover,.post h2 strong,.post h2 a:hover{color:#B30B0B}
