@@ -1,3 +1,11 @@
+.section{
+    width: auto!important;
+    padding-top: 10px!important;
+    padding-bottom:10px!important;
+}
+
+
+
 li.nav-item a.nav-link.nav-btn{
 	border: solid 1px;
     padding: 6px 9px 5px 9px !important;
@@ -523,6 +531,9 @@ body#layout #header2{float:left;width:55%;}
 h1,h2,h3,h4,h5,h6{font-weight:bold;padding:0;color:#141414;font-family:'Open Sans Condensed',"Arial Narrow",Arial,sans-serif}
 /*.date-header{display:none}*/
 /*.post{margin:0;padding:0}*/
+
+
+
 .post {
     margin: 0 0 20px;
     padding: 0 0 10px;
@@ -586,6 +597,10 @@ h1,h2,h3,h4,h5,h6{font-weight:bold;padding:0;color:#141414;font-family:'Open San
 #footer{width:auto;clear:both;margin:0;padding:10px}
 #footer-wrapper{background-color:white;}
 .credit{font-size:90%;padding:10px;border-top:1px solid #D8D8D8;overflow:hidden;text-align:center}
+a img.img-support:hover {
+    filter: grayscale(0.2);
+}
+
 
 img{max-width:100%;height:auto;width:auto}
 .post-footer-line-1 span{background-image:url(http://3.bp.blogspot.com/-3ARiPrbsLqg/UHQ_SZP7vMI/AAAAAAAAFqk/QHYlF_-WtbM/s1600/sprite.png);background-repeat:no-repeat;padding-left:25px;height:20px;display:inline-block}
@@ -615,3 +630,11 @@ span.post-labels{padding-left:25px;background-image:url(http://3.bp.blogspot.com
 .quickedit,.jump-link {display:none}    
 
 /*-- Blogger --*/
+
+@media only screen and (min-width: 768px)  {
+
+/*    #menu-toggle-nav{
+        display: none;
+    }
+*/
+}

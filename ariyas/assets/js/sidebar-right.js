@@ -18,7 +18,7 @@
 				
 				var className = $('#menu-toggle-nav').attr('class');
 				
-				console.log(className);
+				// console.log(className);
 
 				if (className == 'nav-link nav-btn active') {
 					$("#menu-toggle-nav").removeClass("active");
@@ -63,7 +63,7 @@
 				
 				var className = $('#navbar-toggler-collapse').attr('class');
 				
-				console.log(className);
+				// console.log(className);
 
 				if (className == 'navbar-toggler active') {
 					$("#navbar-toggler-collapse").removeClass("active");				
