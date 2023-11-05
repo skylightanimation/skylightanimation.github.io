@@ -1,0 +1,24 @@
+{
+    "name": "Calculator",
+    "short_name": "Calculator (Simple)",
+    "description": "Simple Calculator App with PWA",
+    "lang": "en-US",
+    "dir": "ltr",
+    "theme_color": "#4b5efc",
+    "start_url": ".",
+    "background_color": "#f1f2f3",
+    "display": "standalone",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "./assets/img/logo_x72.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/img/logo_x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

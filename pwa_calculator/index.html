@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="./assets/img/favicon.ico">
+    <title>Calculator</title>
+    <meta name="Description" content="Simple Calculator App with PWA" />
+    <meta name="theme-color" content="#4b5efc" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Sugaku Furienda" />
+    <link rel="apple-touch-icon" href="./assets/img/logo_x512.png" />
+    <meta name="msapplication-TileImage" content="./assets/img/logo_x512.png" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <link rel="manifest" href="./manifest.json">
+    <link id="styles" href="" rel="stylesheet" type="text/css">
+</head>
+<body onload="loaded()">
+
+        
+        <div class="container">
+            <div class="">
+                <div id="text"></div>
+            </div>
+            <div class="lowerContent">
+                <input id="result" type="number">
+                <div class="content">
+                    <button id="actionClear" onclick="accessButton('actionClear')" class="gray">C</button>
+                    <button id="actionPlusMin" onclick="accessButton('actionPlusMin')" class="gray">±</button>
+                    <button id="actionPercent" onclick="accessButton('actionPercent')" class="gray">%</button>
+                    <button id="actionDivided" onclick="accessButton('actionDivided')" class="purple">/</button>
+                    <button id="action7" onclick="accessButton('action7')" class="white">7</button>
+                    <button id="action8" onclick="accessButton('action8')" class="white">8</button>
+                    <button id="action9" onclick="accessButton('action9')" class="white">9</button>
+                    <button id="actionTimes" onclick="accessButton('actionTimes')" class="purple">*</button>
+                    <button id="action4" onclick="accessButton('action4')" class="white">4</button>
+                    <button id="action5" onclick="accessButton('action5')" class="white">5</button>
+                    <button id="action6" onclick="accessButton('action6')" class="white">6</button>
+                    <button id="actionMin" onclick="accessButton('actionMin')" class="purple">-</button>
+                    <button id="action1" onclick="accessButton('action1')" class="white">1</button>
+                    <button id="action2" onclick="accessButton('action2')" class="white">2</button>
+                    <button id="action3" onclick="accessButton('action3')" class="white">3</button>
+                    <button id="actionPlus" onclick="accessButton('actionPlus')" class="purple">+</button>
+                    <button id="actionDot" onclick="accessButton('actionDot')" class="white">.</button>
+                    <button id="action0" onclick="accessButton('action0')" class="white">0</button>
+                    <button id="actionBackSpace" onclick="accessButton('actionBackSpace')" class="white">←</button>
+                    <button id="actionSubmit" onclick="accessButton('actionSubmit')" class="purple">=</button>
+                </div>
+            </div>
+      </div>
+
+
+
+    
+    <script src="https://skylightanimation.github.io/assets/plugin/jquery/jquery-3.5.1.min.js"></script>
+    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <!-- <script src="./assets/js/screen-debuger.js"></script> -->
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js')
+                .then(function () {
+                    console.log('Service Worker Registered');
+                });
+        }
+
+    </script>
+
+</body>
+
+</html>

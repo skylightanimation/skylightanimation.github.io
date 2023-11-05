@@ -1,0 +1,71 @@
+.container {
+    margin: 7.5vw;
+}
+
+.lowerContent {
+    position: fixed;
+    bottom: 6vh;
+}
+
+button {
+    font-size: 3vh;
+    width: 16vw;
+    height: 16vw;
+    border: none;
+    border-radius: 32%;
+    margin: 2%;
+}
+
+button:hover {
+    background: #e7e7e7;
+    color: #666 !important;
+}
+
+.white {
+    background: #fff;
+}
+
+.purple {
+    background: #4b5efc;
+    color: #fff !important
+}
+
+.gray {
+    background: #d2d3da;
+}
+
+.content {
+    width: 100%;
+}
+
+#text {
+    letter-spacing: 2.25px;
+    height: 9vh;
+    margin: 2% 2vw 0%;
+    border-radius: 10px 10px 0 0;
+    padding: 5px;
+    text-align: right;
+    background: #f1f2f3;
+    color: #888888;
+    font-size: 7vw;
+    width: 75vw;
+}
+
+#result {
+    letter-spacing: 2.25px;
+    width: 75vw;
+    height: 8vw;
+    margin: 0px 2vw 8vw;
+    border: none;
+    font-size: 4vh;
+    border-radius: 0 0 10px 10px;
+    padding: 5px;
+    text-align: right;
+    background: #f1f2f3;
+}
+
+body {
+    background: #f1f2f3;
+    height: 86vh;
+    font-family: sans-serif;
+}
