@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagonal Gradient Fade Out</title>
+    <style>
+        /* ------------------------------------------------------------------ */
+        /* CSS STYLES */
+        /* ------------------------------------------------------------------ */
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            /* Background color to be revealed as the image fades */
+            background-color: #000; 
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+
+        img{
+            border-radius: 100%;
+            width: 150px!important;
+            height: 150px!important;
+        }
+
+        .image-container {
+            position: relative;
+            width: 150px!important;
+            height: 150px!important;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden; /* Important for the image dimensions */
+        }
+
+        #fadingImage {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 1; 
+            
+            transition: opacity 1.5s ease-out, transform 1.5s ease-in-out;
+            transform: translate(0, 0);
+
+        
+            /* mask-image: linear-gradient(to top right, 
+                rgba(0, 0, 0, 1) 0%,  
+                rgba(0, 0, 0, 1) 60%, 
+                rgba(0, 0, 0, 0) 100%
+            );
+            -webkit-mask-image: linear-gradient(to top right, 
+                rgba(0, 0, 0, 1) 0%,   
+                rgba(0, 0, 0, 1) 60%,  
+                rgba(0, 0, 0, 0) 100% 
+            ); */
+        }
+
+
+        .fade-out {
+            opacity: 0 !important;
+            transform: translate(5px, -5px) !important;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Diagonal Gradient Fade Out</h1>
+    <p>The image will fade out starting from the **bottom-left** and ending at the **top-right**.</p>
+
+    <div class="image-container">
+        <img id="fadingImage" src="https://picsum.photos/400/300?random=20" alt="Image to Fade Out">
+    </div>
+
+    <button onclick="startFadeOut()" style="margin-top: 20px; padding: 10px 20px; cursor: pointer;">
+        Start Diagonal Fade Out
+    </button>
+
+
+    <script>
+        function startFadeOut() {
+            const image = document.getElementById('fadingImage');
+            
+            // Add the 'fade-out' class, which triggers the opacity change (0) in CSS.
+            image.classList.add('fade-out');
+            // image.classList.add('shifted');
+            
+            // Optional: Reset button/state after the transition completes
+            setTimeout(() => {
+                console.log("Diagonal Fade Out complete.");
+                // image.classList.remove('fade-out'); 
+            }, 2000); // Matches the CSS transition duration
+        }
+    </script>
+
+</body>
+</html>

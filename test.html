@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staggered Character Transition</title>
+    <style>
+
+
+        center h2 span {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fade-in-text 0.5s forwards;
+            /* Calculate a staggered delay based on the CSS custom property */
+            animation-delay: calc(0.08s * var(--index));
+        }
+        
+        @keyframes fade-in-text {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <center>
+
+    <h2>Hello World</h2>
+    </center>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+	function loadText(){
+		const $textElement = $('center h2');
+
+		// Check if the element exists
+		if ($textElement.length) {
+			// Get the text content and trim whitespace
+			const text = $textElement.text().trim();
+			
+			// Clear the original text content
+			$textElement.empty();
+			
+			// Split the text and iterate over each character and its index
+			$.each(text.split(''), function(index, char) {
+				// Handle spaces: use non-breaking space (&#xA0; or &nbsp;)
+				const charContent = (char === ' ') ? '\u00A0' : char; 
+				
+				// Create a new <span> element, set its content, and set the CSS variable
+				$('<span>')
+					.text(charContent)
+					.css('--index', index)
+					.appendTo($textElement); // Append the <span> to the main element
+			});
+		}
+	}
+
+
+    loadText()
+    </script>
+
+</body>
+</html>
