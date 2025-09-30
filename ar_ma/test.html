@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Smith - Programmer & Content Writer Portfolio</title>
+    <!-- Load Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <style>
+        /* Custom Dark Theme Styles */
+        :root {
+            --bs-body-color: #f8f9fa; /* Light text */
+            --bs-body-bg: #212529; /* Dark background */
+            --bs-primary: #ff5722; /* Custom accent color (Deep Orange) */
+            --bs-secondary: #343a40; /* Card/Component background */
+        }
+        
+        body {
+            background-color: var(--bs-body-bg) !important;
+            color: var(--bs-body-color) !important;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Load Inter Font */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+        /* Custom Card Style for Skills/Projects */
+        .custom-card {
+            background-color: var(--bs-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 0.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .custom-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1rem rgba(255, 87, 34, 0.2); /* Shadow using accent color */
+        }
+
+        /* Styling for the progress bar background (Bootstrap's default is often too light) */
+        .progress {
+            background-color: #495057; 
+            height: 1.25rem;
+        }
+
+        /* Navigation styling to match dark theme */
+        .navbar {
+            background-color: rgba(33, 37, 41, 0.95) !important; 
+            backdrop-filter: blur(5px);
+        }
+    </style>
+</head>
+<body data-bs-theme="dark">
+
+    <!-- 1. Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark shadow">
+        <div class="container-md">
+            <a class="navbar-brand fw-bold text-primary" href="#">AS.DevWrite</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Expertise</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container-md mt-5 pt-3">
+
+        <!-- 2. Hero / About Section -->
+        <section id="about" class="py-5 py-md-5 text-center text-md-start">
+            <div class="row align-items-center">
+                <div class="col-md-3 text-center mb-4 mb-md-0">
+                    <!-- Placeholder for Avatar -->
+                    <div class="mx-auto bg-secondary d-flex align-items-center justify-content-center border border-5 border-primary rounded-circle shadow-lg" style="width: 200px; height: 200px;">
+                        <span class="fs-1 fw-bolder text-primary">AS</span>
+                    </div>
+                </div>
+
+                <div class="col-md-9">
+                    <p class="lead text-primary mb-1 fw-semibold">Hello, I'm</p>
+                    <h1 class="display-4 fw-bolder text-light mb-2">Alex Smith</h1>
+                    <h2 class="fs-3 fw-light text-secondary mb-4">Full-Stack Developer & Technical Content Specialist</h2>
+                    <p class="text-white-50 fs-5">
+                        I specialize in building **robust, clean code** with modern web technologies, and I leverage my content skills to create **crystal-clear documentation** and tutorials. I turn engineering complexity into user clarity.
+                    </p>
+                    <div class="mt-4 d-flex justify-content-center justify-content-md-start gap-3">
+                        <a href="#projects" class="btn btn-primary btn-lg fw-bold shadow-lg">View Portfolio</a>
+                        <a href="#" target="_blank" class="btn btn-outline-primary btn-lg fw-bold">Connect on LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-5 border-secondary">
+        
+        <!-- 3. Expertise Section (Programming Progress Bars + Content Skills) -->
+        <section id="skills" class="py-5">
+            <h2 class="text-center text-primary fw-bold mb-5">Technical Expertise</h2>
+
+            <div class="row g-4">
+                
+                <!-- A. Programming Skills (Progress Bars) -->
+                <div class="col-lg-6">
+                    <h3 class="fs-4 text-light mb-3 border-bottom border-primary pb-2">Programming & Development</h3>
+                    
+                    <!-- HTML Skill Bar -->
+                    <div class="mb-3">
+                        <small class="d-block mb-1">HTML5 / Semantic Markup</small>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+                        </div>
+                    </div>
+
+                    <!-- CSS Skill Bar -->
+                    <div class="mb-3">
+                        <small class="d-block mb-1">CSS3 / Bootstrap 5 / Layout</small>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+                        </div>
+                    </div>
+
+                    <!-- JavaScript Skill Bar -->
+                    <div class="mb-3">
+                        <small class="d-block mb-1">JavaScript / JQuery</small>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 36%;" aria-valuenow="36" aria-valuemin="0" aria-valuemax="100">36%</div>
+                        </div>
+                    </div>
+
+                    <!-- PHP Skill Bar -->
+                    <div class="mb-3">
+                        <small class="d-block mb-1">PHP / Laravel / Databases</small>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- B. Content Writing Skills (Cards) -->
+                <div class="col-lg-6">
+                    <h3 class="fs-4 text-light mb-3 border-bottom border-primary pb-2">Technical & Content Writing</h3>
+                    
+                    <div class="row g-3">
+                        
+                        <div class="col-md-6">
+                            <div class="p-4 custom-card h-100">
+                                <div class="fs-3 text-primary mb-2">📝</div>
+                                <h4 class="fs-5 fw-semibold">Documentation</h4>
+                                <p class="text-white-50 small">API reference, tutorials, knowledge bases, SSGs (e.g., Docusaurus).</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="p-4 custom-card h-100">
+                                <div class="fs-3 text-primary mb-2">💡</div>
+                                <h4 class="fs-5 fw-semibold">Content Strategy</h4>
+                                <p class="text-white-50 small">SEO optimization, audience analysis, blog posts, and editing.</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-5 border-secondary">
+
+        <!-- 4. Work Experience Section -->
+        <section id="experience" class="py-5">
+            <h2 class="text-center text-primary fw-bold mb-5">Professional Experience</h2>
+
+            <div class="row g-4">
+                
+                <!-- Job Entry 1 -->
+                <div class="col-lg-6">
+                    <div class="custom-card p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h4 class="fs-5 fw-semibold mb-0 text-light">Technical Writer & Developer Advocate</h4>
+                            <span class="badge text-bg-primary">2022 - Present</span>
+                        </div>
+                        <h5 class="text-white-50 fs-6 mb-3">TechCorp Solutions | San Francisco, CA</h5>
+                        <ul class="text-white-50 small list-unstyled ps-3">
+                            <li class="mb-1 d-flex"><span class="me-2 text-primary">&bull;</span> Led documentation efforts for a microservices architecture, reducing time-to-onboard new developers by 40%.</li>
+                            <li class="mb-1 d-flex"><span class="me-2 text-primary">&bull;</span> Wrote and published 15+ SEO-optimized tutorials (JavaScript, Node.js) resulting in a 25% increase in developer traffic.</li>
+                            <li class="mb-1 d-flex"><span class="me-2 text-primary">&bull;</span> Collaborated with engineering teams to ensure API documentation matched the latest codebase changes.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job Entry 2 -->
+                <div class="col-lg-6">
+                    <div class="custom-card p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h4 class="fs-5 fw-semibold mb-0 text-light">Junior Web Programmer</h4>
+                            <span class="badge text-bg-secondary">2019 - 2022</span>
+                        </div>
+                        <h5 class="text-white-50 fs-6 mb-3">Digital Marketing Agency | Remote</h5>
+                        <ul class="text-white-50 small list-unstyled ps-3">
+                            <li class="mb-1 d-flex"><span class="me-2 text-primary">&bull;</span> Developed and maintained client websites using HTML, CSS, and PHP, handling front-end and basic database integration.</li>
+                            <li class="mb-1 d-flex"><span class="me-2 text-primary">&bull;</span> Assisted senior team in optimizing legacy PHP codebases for improved performance and security.</li>
+                            <li class="mb-1 d-flex"><span class="me-2 text-primary">&bull;</span> Wrote marketing copy and website content, ensuring technical accuracy for client products.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <hr class="my-5 border-secondary">
+
+        <!-- 5. Projects Section (Updated from 4 to 5) -->
+        <section id="projects" class="py-5">
+            <h2 class="text-center text-primary fw-bold mb-5">Featured Portfolio (Code & Content)</h2>
+
+            <div class="row g-4">
+                
+                <!-- Project Card 1 (Development Focus) -->
+                <div class="col-md-6">
+                    <div class="custom-card shadow-lg h-100">
+                        <!-- Placeholder Image/Screenshot -->
+                        <div class="p-5 bg-dark text-white-50 text-center fs-5 fw-bold" style="height: 180px;">
+                            [ Code Project Screenshot ]
+                        </div>
+                        <div class="p-4">
+                            <h3 class="fs-4 fw-semibold mb-2">Secure API Gateway (PHP/Node.js)</h3>
+                            <p class="text-white-50 small mb-3">
+                                Developed a robust and scalable microservice gateway in Node.js for authentication and rate limiting, integrating with a legacy PHP backend.
+                            </p>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="badge text-bg-primary">Node.js</span>
+                                <span class="badge text-bg-primary">PHP</span>
+                                <span class="badge text-bg-secondary">SQL</span>
+                            </div>
+                            <a href="#" target="_blank" class="text-primary me-3 small fw-bold">View Code &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 (Content Focus) -->
+                <div class="col-md-6">
+                    <div class="custom-card shadow-lg h-100">
+                        <!-- Placeholder Image/Screenshot -->
+                        <div class="p-5 bg-dark text-white-50 text-center fs-5 fw-bold" style="height: 180px;">
+                            [ Content Example Screenshot ]
+                        </div>
+                        <div class="p-4">
+                            <h3 class="fs-4 fw-semibold mb-2">PHP Security Best Practices Guide</h3>
+                            <p class="text-white-50 small mb-3">
+                                Authored a comprehensive technical guide on PHP security, covering input validation, CSRF protection, and dependency management.
+                            </p>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="badge text-bg-primary">Technical Writing</span>
+                                <span class="badge text-bg-primary">SEO</span>
+                                <span class="badge text-bg-secondary">Documentation</span>
+                            </div>
+                            <a href="#" target="_blank" class="text-primary me-3 small fw-bold">Read Article &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <hr class="my-5 border-secondary">
+
+        <!-- 6. Contact Section (Updated from 5 to 6) -->
+        <section id="contact" class="py-5 text-center">
+            <h2 class="text-primary fw-bold mb-4">Let's Connect and Collaborate.</h2>
+            <p class="text-white-50 fs-5 mb-4 max-w-lg mx-auto">
+                I'm available for new challenges in development or technical content creation. Send me a message!
+            </p>
+            
+            <a href="mailto:alex.smith@example.com" 
+               class="btn btn-primary btn-lg rounded-pill fw-bold shadow-lg py-3 px-5">
+                Email Me: alex.smith@example.com
+            </a>
+
+            <div class="mt-4 d-flex justify-content-center gap-4">
+                <!-- Social Links Placeholder -->
+                <a href="https://github.com/alexsmithdev" target="_blank" class="text-white-50 hover-text-primary">
+                    <svg class="bi" width="32" height="32" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.94.29.25.54.73.54 1.48v2.21c0 .21.15.46.55.38C12.71 14.53 15 11.54 15 8c0-4.42-3.58-8-8-8z"/></svg>
+                </a>
+                <a href="https://linkedin.com/in/alexsmith" target="_blank" class="text-white-50 hover-text-primary">
+                    <svg class="bi" width="32" height="32" fill="currentColor" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.378V9.297h-3V1.874h3v11.648zm-1.57-12.7c-1.171 0-1.921.789-1.921 1.764 0 .973.748 1.764 1.921 1.764 1.17 0 1.919-.791 1.919-1.764 0-.975-.749-1.764-1.919-1.764zm10.742 12.7V9.297h-2.73c-2.02 0-2.133-2.483-2.133-3.076V1.874h3v1.89h.034c.594-.969 1.76-2.016 3.998-2.016 4.292 0 7.551 3.259 7.551 7.641V14.854h-3.003V10.15c0-.853-.404-1.295-1.134-1.295-.733 0-1.077.534-1.077 1.295v4.704z"/></svg>
+                </a>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-secondary mt-5 py-4 text-center text-sm text-white-50">
+        <p class="mb-0">&copy; 2024 Alex Smith. Built with Bootstrap 5.</p>
+    </footer>
+
+    <!-- Load Bootstrap 5 JavaScript Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

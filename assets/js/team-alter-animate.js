@@ -123,7 +123,10 @@ function checkingProfile(who, switcher){
 
         }else{
             localStorage.setItem('TeamProfileIsAlter_'+who, 'false');
-            $('#'+alterableTeam[who].alter.Kariya.id).hide();				
+            $('#'+alterableTeam[who].alter.Kariya.id).hide();
+            $('center#'+who+' img').removeClass('teamProfileIn');
+            $('center#'+who+' img').addClass('teamProfileOut');
+            
         }
     }
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>ar_ma | author</title>
+	<title>Ar Ma | Web Developer</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" href="assets/img/SkyLight_Animation.png">
 
@@ -10,9 +10,16 @@
 	<style type="text/css">
 		body{font-family: sans-serif;font-family: sans-serif; padding: 0 0%;margin: 10px 0;}
 
-		.cover-profile{background: url(assets/img/header.png);	border: solid 2px; background-size: 100% 100%; height: 150px; border-bottom: solid 5px #c2c2c2;border-radius: 10px 10px 0px 0px}
+		.cover-profile{background: url(assets/img/header.png);	border: solid 2px; background-size: 100% 100%; height: 28vh; border-bottom: solid 5px #c2c2c2;border-radius: 10px 10px 0px 0px}
 		.info-profile{background: #ccc; padding: 10px 15px 25px;border-radius: 0px 0px 10px 10px;}
-		.photo-profile{border-radius: 50%;height: 95px;width: 95px;border: solid 5px #c2c2c2;position: relative;top: -195px;}
+		.photo-profile{
+			border-radius: 50%;
+			height: 128px;
+			width: 128px;
+			border: solid 5px #c2c2c2;
+			position: relative;
+			top: -238px
+		}
 
 		.text-decoration{text-shadow: #7b7777 1px 2px 1px;color: #242424;padding: 0px;margin: 20px 0px 10px;}
 
@@ -35,12 +42,12 @@
 		button.ctrl-button:active {background: #2196F3;border: solid 1px #1281c1;}
 		li button.ctrl-button:hover {background: #fff!important;color: #444!important;border: solid 1px #444!important;}
 		button.ctrl-button span.fa {width: 25px; text-align: center}
-		.box-3{/*width: 30%;*/margin: 0 10px 0px;min-width: 300px;position: relative;float: left;}
+		.box-3{width: 30%;margin: 0 10px 0px;min-width: 300px;position: relative;float: left;}
 		.container{position: absolute;min-height: 1px;left: 60px; margin-bottom: 60px}
 		.header{margin-bottom: 20px; min-width: 350px;}
 		.box{border: 1px solid #ddd; width: 100%; min-width: 350px;margin: 0px 0px 20px;position: relative;float: left;border-radius: 4px;}
 		.box-title {padding: 10px; background: #f9f9f9;border-radius: 4px 4px 0 0;border-bottom: solid 1px #ccc}
-		.box-h{padding: 5px 15px 15px}.sub-title{background: #222;border-radius: 4px;padding: 5px 10px;color: #fff;margin: 10px 0px;font-weight: bold;}
+		.box-h{padding: 10px 15px 15px}.sub-title{background: #222;border-radius: 4px;padding: 5px 10px;color: #fff;margin: 10px 0px;font-weight: bold;}
 		text{margin: 0px 5px;border-bottom: solid 1px #ccc;padding: 0px 5px 2px;}
 		.progress {height: 10px;margin-bottom: 20px;overflow: hidden;background-color: #f9f9f9;border-radius: 4px;-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);box-shadow: inset 0 1px 2px rgba(0,0,0,.1);}
 		.progress-bar{float: left;width: 0;height: 100%;font-size: 12px;line-height: 20px;color: #fff;text-align: center;background-color: #337ab7;-webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);-webkit-transition: width .6s ease;-o-transition: width .6s ease;transition: width .6s ease;}
@@ -50,11 +57,65 @@
 		.btn-social span:hover{background: #fff!important;color:#222; border: solid 1px #222!important}
 
 		.contributor-list{padding: 5px 10px;border-bottom: solid 1px #f2f2f2;}
-		@media screen and (max-width:300px){.photo-profile {top: -225px;}}
+
 
 		footer{position: fixed;bottom: 0px;background: #222;color: #ccc;width: 100%;text-align: right;}
 		.footer-logo{float: left;width: 65px;height: 65px;}
 		.footer-text{ padding: 25px;}
+
+		@media screen and (max-width:1197px){
+			.box-3 {
+				width: 31%;
+			}	
+		}
+
+		@media screen and (max-width:1160px){
+			.box-3 {
+				width: 47.5%;
+			}
+
+			.box-last{
+				margin-bottom: 10rem;
+			}
+		}
+
+		@media screen and (max-width: 875px) {
+			.box-3 {
+				width: 96.5%;
+			}
+			.cover-profile{
+				height: 48vh;
+				filter: blur(2px);
+			}		
+		}
+		@media screen and (max-width: 732px) {
+			.box-3 {
+				width: 95.5%;
+			}
+
+			.cover-profile {
+				filter: blur(1px);
+        		height: 38vh;
+    		}
+		}
+		@media screen and (max-width: 600px) {
+			.box-3 {
+				width: 93.5%;
+			}
+			.cover-profile {
+				filter: blur(0);
+				height: 30vh;
+			}
+		}
+
+		@media screen and (max-width: 500px) {
+			.cover-profile {
+				filter: blur(0);
+				height: 24vh;
+			}
+		}
+		@media screen and (max-width:300px){.photo-profile {top: -225px;}}
+		
 	</style>
 	
 </head>
@@ -65,7 +126,7 @@
 	<div class="ctrl-guard-button">
 		<ul class="ctrl-guard-button">
 			<li><button id="btn-profile" type="button" onclick="profile('profile')" class="ctrl-button active" title="Basic Information"><span class="fa fa-user"></span></button></li>
-			<li><button id="btn-summary" type="button" onclick="summary('summary')" class="ctrl-button active" title=""><span class="fa fa-exclamation-circle"></span></button></li>
+			<li><button id="btn-summary" type="button" onclick="summary('summary')" class="ctrl-button active" title=""><span class="fa fa-file-text"></span></button></li>
 
 			<li><button id="btn-skill" type="button" onclick="skill('skill')" class="ctrl-button active" title="Skill Information"><span class="fa fa-cogs"></span></button></li>
 			<li><button id="btn-contributor" type="button" onclick="contributor('contributor')" class="ctrl-button active" href="" title="Contact Information"><span class="fa fa-globe"></span></button></li>
@@ -85,14 +146,15 @@
 						
 
 				<div class="info-profile">
-					<h1 class="text-decoration">ar_ma</h1>
-					<small><span class="fa fa-cog"></span> <i>gear</i> <b>::</b> <b>1 </b> <span class="fa fa-long-arrow-right"></span> <i>accelerate</i> <b>^_^</b><br>
-						<span class="fa fa-refresh"></span> <i>Learn of the Loop</i>
+					<h1 class="text-decoration">AriMa Ryunosuke</h1>
+					<small>
+						<span class="fa fa-code"></span> Fullstack Web Developer <span class="fa fa-keyboard-o"></span><br>
+						<span class="fa fa-pencil"></span> Content Writer <span class="fa fa-eraser"></span>
 					</small>
 				</div>
 				</center>
 				<center style="height: 0px;">
-				<img class="photo-profile" src="assets/img/photo-profile.jpg">
+				<img class="photo-profile" src="assets/img/AriMa_Ryunosuke_v5_Say_Hallo.png">
 				</center>
 			</div>
 		<!-- Header -->
@@ -123,17 +185,14 @@
 		
 		<!-- summary -->
 			<div id="summary" class="box">
-				<div class="box-title"><h3>Summary<span class="fa  fa-exclamation-circle right"></span></h3></div>
+				<div class="box-title"><h3>Summary<span class="fa  fa-file-text right"></span></h3></div>
 				<div class="box-h">
 					<p class="summary-text">
-						Let me introduce my self my name is <b>Arma</b>.<br><br>
+						Hallo, I'm Ryunosuke Arima. More commonly known as <b>Ar Ma</b>.<br><br>
+						I am a freelance full-stack web developer and content writer for +5 years. Most of the projects I've worked on are under <a href="https://skylightanimation.github.io">SkyLight_Animation</a> a programming community.<br><br>
+						  
+						Additionally, I contribute to <a href="https://langittutorial.com">Langit Tutorial</a> as a content writer, sharing insights, knowledge, best practices, case studies, and solutions in articles and tutorials.
 
-						I'm BackEnd Website Developer (<b>PHP</b> and <b>Codeigniter</b>) and I work as a freelancer programmer since 2017. I like coding so I still learn and explore programming languages until now. <br><br>
-
-						I also like to write or blog. I have started writing an article on the blog since 16th years old. My First Blog I write an article about Electrical Engineer for 1 the year (2015-2016).<br>
-						In 2017 then I start Part-Time Job as a writer on <a href="https://skylightanimation.github.io">SkyLight_Animation</a> to write articles and tutorials about case study website programming (<b>HTML</b>/<b>CSS</b>/<b>JS</b>/<b>PHP</b>), problem-solving, and tweaking using Linux (Ubuntu).<br><br>
-
-						I also interest 2d drawing and line art graphic design, logo design, website design using (<b>Inkscape</b>) but I don't focus on design, there is only for a refreshing and spend free time.
 					</p>
 				</div>
 			</div>
@@ -148,19 +207,30 @@
 				<div class="box-title"><h3>Skill<span class="fa  fa-gears right"></span></h3></div>
 				<div class="box-h">
 
-					<span class="fa fa-html5"></span> HTML<b class="right">78%</b><br>
+					<span class="fa fa-html5"></span> HTML / Semantic Markup<b class="right">90%</b><br>
 					<div class="progress">
-					  <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 78%;">
+					  <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 90%;">
 						
 					  </div>
 					</div>
-					<span class="fa fa-css3"></span> CSS<b class="right">60%</b><br>
+					<span class="fa fa-css3"></span> CSS / Bootstraps / Layout<b class="right">85%</b><br>
 					<div class="progress">
-					  <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 52%;">
+					  <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 85%;">
 						
 					  </div>
 					</div>
-
+					<span class="fa fa-file-code-o"></span> JavaScript / Jquery<b class="right">42%</b><br>
+					<div class="progress">
+					  <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 42%;">
+						
+					  </div>
+					</div>
+					<span class="fa fa-file-code-o "></span> PHP / Codeigniter 3 <b class="right">72%</b><br>
+					<div class="progress">
+					  <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 72%;">
+						
+					  </div>
+					</div>
 				</div>
 			</div>
 		<!-- skill -->
@@ -175,7 +245,7 @@
 
 					<div class="contributor-list">
 						<b>Blogger</b><br>
-						<i><a href="https://langittutorial.blogspot.com">Langit Tutorial</a></i>
+						<i><a href="https://langittutorial.com">Langit Tutorial</a></i>
 					</div>
 					<div class="contributor-list">
 						<b>Itch.io</b><br>
@@ -185,7 +255,7 @@
 					<center>
 
 						<a class="btn-social" href="https://www.facebook.com/SkyLight.Animation/"><span style="background: #2871a4;border: solid #095290 1px;" class=" fa fa-facebook"></span></a>
-						<a  class="btn-social" href="https://twitter.com/skylight_army"><span style="background: #19a1ff;border: solid 1px #30bdf0;" class=" fa fa-twitter"></span></a>
+						<a  class="btn-social" href="https://x.com/skylight_army"><span style="background: #19a1ff;border: solid 1px #30bdf0;" class=" fa fa-twitter"></span></a>
 						<a class="btn-social" href="https://github.com/skylightanimation"><span class=" fa fa-github"></span></a>
 						<a class="btn-social" href="https://www.youtube.com/channel/UCDT3jUQAGTh1U2xOSEhAWUQ"><span style="background: #d91818;border: solid 1px #b50000;" class=" fa fa-youtube"></span></a>
 					</center>
@@ -196,7 +266,7 @@
 		<!-- contributor -->
 	</div>
 
-	<div class="box-3" >	
+	<div class="box-3 box-last" >	
 		<!-- Comment -->
 			<div id="contact" class="box">
 				<div class="box-title"><h3>Contact Us<span class="fa  fa-envelope right"></span></h3></div>
@@ -213,8 +283,8 @@
 						<input class="input-form" type="email" name="email">
 					</div>
 					<div class="form-row">
-						<label>Commentar <small class="redColor">*</small></label>
-						<textarea class="input-form" name="comment"></textarea>
+						<label>Messages <small class="redColor">*</small></label>
+						<textarea class="input-form" name="message"></textarea>
 					</div>
 				</div>
 			</div>
@@ -224,7 +294,7 @@
 
 <footer> 
 	<div><img class="footer-logo" src="assets/img/SkyLight_Animation.png"></div>
-	<div class="footer-text"><b>ar_ma</b> | 2019 &copy;  </div>
+	<div class="footer-text"><b>Ar Ma</b> | 2019 - <span class="year"></span> &copy; copyright all right reserved</div>
 </footer>
 <script type="text/javascript">
 
@@ -294,6 +364,12 @@
 			accessBtn.className = "ctrl-button";
 		}
 	}
+
+
+	var date = new Date();
+	var year = date.getFullYear();
+	$('.year').text(year);
+
 </script>
 
 
