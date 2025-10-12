@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyLight Animation - Short Animation</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Google Font (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJz/l5s+0lW3DqZz1FwN0l8N0I2+4QyC+6f/S/6B9G9gN9kF9z9g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- YouTube Iframe API Script -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <style>
+        :root {
+            --primary-color: #008ef1;
+            --reel-bg-color: #1a1a1a;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7f9;
+        }
+
+        header{
+            background-color: --primary-color;
+            height: 100px;
+        }
+
+        /* Custom Reel Modal Styling */
+        #videoReelModal .modal-dialog {
+            max-width: 750px; 
+            margin: 1.75rem auto;
+            height: 90vh;
+            margin-top: 5vh;
+        }
+
+        #videoReelModal .modal-content {
+            border-radius: 1.5rem; 
+            overflow: hidden;
+            background-color: var(--reel-bg-color); /* Dark background for video area */
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        #videoReelModal .modal-body {
+            display: flex;
+            height: 100%;
+            position: relative;
+            padding: 0 !important;
+        }
+
+        .reel-player-container {
+            position: relative;
+            height: 100%;
+            flex-grow: 1;
+            width: 100%;
+            /* Ensures YouTube iframe fits */
+            overflow: hidden; 
+        }
+        
+        /* Styles for the YouTube Player Placeholder */
+        .youtube-player-placeholder {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* CAROUSEL CONTROLS (Vertical Swipe) */
+        .carousel-item { height: 100%; position: relative; }
+        .carousel-inner { height: 100%; }
+        .carousel-control-prev, .carousel-control-next { opacity: 0.8; width: 100%; height: 50%; z-index: 10; }
+        .carousel-control-prev { top: 0; }
+        .carousel-control-next { bottom: 0; top: 50%; }
+        .carousel-control-prev-icon, .carousel-control-next-icon { display: none; }
+        .custom-nav-icon {
+            position: absolute; left: 50%; transform: translateX(-50%);
+            color: #fff; font-size: 2rem; text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+        }
+        .carousel-control-prev .custom-nav-icon { top: 25%; }
+        .carousel-control-next .custom-nav-icon { top: 75%; }
+
+        /* FLOATING VIDEO CONTROLS (NEW) */
+        .controls-overlay {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            z-index: 20;
+            display: flex;
+            gap: 10px;
+        }
+
+        .control-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+            backdrop-filter: blur(5px);
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .control-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        /* SIDE PANEL STYLES */
+        .description-panel {
+            width: 0; 
+            max-width: 300px;
+            background-color: #fff;
+            color: #333;
+            overflow-y: auto;
+            transition: width 0.3s ease-in-out, padding 0.3s ease-in-out;
+            padding: 0; 
+            border-left: 1px solid #eee;
+        }
+
+        .description-panel.expanded {
+            width: 280px; 
+            padding: 1.5rem;
+        }
+        .description-content{
+            font-size: 12px;
+        }
+        .description-content {
+            opacity: 0; 
+            transition: opacity 0.1s 0.2s;
+        }
+
+        .description-panel.expanded .description-content {
+            opacity: 1; 
+        }
+        
+        /* TOGGLE BUTTON STYLES */
+        .toggle-button {
+            position: absolute;
+            top: 15px;
+            right: 15px; 
+            z-index: 25; 
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            backdrop-filter: blur(5px);
+            transition: right 0.3s ease-in-out, background 0.2s, color 0.3s;
+        }
+
+        .toggle-button.shifted {
+            right: 295px;
+            color: var(--primary-color);
+            background: #fff;
+        }
+        
+        .btn-close-custom {
+            top: 65px; 
+            right: 15px; 
+            z-index: 20; 
+            color: white;
+            opacity: 1;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 1);
+        }
+
+        .text-category{
+            padding: 0px 15px;
+        }
+        .card-title-custom.text-truncate{
+            padding: 10px 15px 0px;
+        }
+
+        .video-card{
+            cursor:pointer
+        }
+
+        .navbar-logo{            
+            width: 64px;
+        }
+
+        .navbar-title{
+            font-size: 1.25rem;
+            font-family: sans-serif;
+            top: -4px;
+            position: relative;
+            display: inline-flex
+        }
+
+        .navbar-describe{
+            position: relative;
+            padding: 0px 4.2rem;
+            font-size: 0.8rem;
+            top: -26px;
+            color: #9f9f9f;
+            font-family: monospace;
+        }
+        .navbar-list{
+            position: absolute;
+            top: 0px;
+            right: 0;
+            padding: 1.5rem 4.8rem;
+        }
+
+.topnav {
+  /* background-color: #333; */
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  /* color: #f2f2f2; */
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  /* background-color: #9f9f9f; */
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  /* background-color: #04AA6D; */
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+.text-justify{
+    text-align: justify;
+}
+
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+
+    </style>
+</head>
+<body>
+
+    <header class="bg-white shadow-sm mb-5 sticky-top">
+        <div class="container py-3">
+            <a href="https://skylightanimation.github.io"><img class="navbar-logo" src="./assets/img/SkyLight_Animation.png"><h1 class="h3 mb-0 navbar-title" style="color: var(--primary-color);"> <b>SkyLight Animation </b>  </h1></a>
+            <div class="navbar-describe">Short Video Animation </div>
+        </div>
+
+        <div class="navbar-list">
+            <div class="topnav" id="myTopnav">
+            <a href="https://skylightanimation.github.io">Home</a>
+            <a href="https://skylightanimation.github.io#about">About</a>
+            <a href="https://skylightanimation.github.io#project">Project</a>
+            <a href="https://skylightanimation.github.io#team">Team</a>            
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- <p class="lead text-center text-muted mb-4">Click any video thumbnail below to open the immersive reel view.</p> -->
+        
+        <!-- Video Gallery Grid -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="video-gallery">
+            <!-- Video Cards will be populated here by jQuery -->
+        </div>
+        
+        <div class="text-center my-5 py-5">
+            <!-- <h2 class="text-muted">Explore More</h2>
+            <p class="text-muted">A fully responsive and interactive experience.</p> -->
+        </div>
+
+    </main>
+
+    <!-- Video Reel Modal (The Lightbox) -->
+    <div class="modal fade" id="videoReelModal" tabindex="-1" aria-labelledby="videoReelModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                
+                <!-- Custom Close Button -->
+                <button type="button" class="btn-close-custom" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fas fa-times-circle"></i>
+                </button>
+                
+                <!-- NEW: Toggle Panel Button -->
+                <button id="togglePanelBtn" class="toggle-button" aria-expanded="false" aria-controls="descriptionPanel">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="modal-body p-0 d-flex reel-layout-container">
+                    <!-- 1. VIDEO PLAYER COLUMN (Left/Main) -->
+                    <div class="reel-player-container h-100">
+                        <!-- Bootstrap Carousel for sliding between reels -->
+                        <div id="videoCarousel" class="carousel slide h-100" data-bs-interval="false">
+                            <div class="carousel-inner h-100" id="carousel-content">
+                                <!-- Carousel Items will be dynamically added here -->
+                            </div>
+
+                            <!-- Previous Control (Upper Half) -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+                                <span class="custom-nav-icon"><i class="fas fa-chevron-up"></i></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+
+                            <!-- Next Control (Lower Half) -->
+                            <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+                                <span class="custom-nav-icon"><i class="fas fa-chevron-down"></i></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                        <!-- NEW: Floating Playback Controls -->
+                        <div class="controls-overlay">
+                            <!-- Play / Pause Button -->
+                            <button id="togglePlayPauseBtn" class="control-btn" aria-label="Toggle Playback">
+                                <i class="fas fa-play" id="playPauseIcon"></i>
+                            </button>
+                            <!-- Volume Toggle Button -->
+                            <button id="toggleVolumeBtn" class="control-btn" aria-label="Toggle Volume">
+                                <i class="fas fa-volume-up" id="volumeIcon"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- 2. DESCRIPTION PANEL COLUMN (Right/Collapsible) -->
+                    <div id="descriptionPanel" class="description-panel flex-shrink-0">
+                        <!-- Dynamic content will be injected here -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery CDN (Required by Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap 5 JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+        // Use a self-invoking function to encapsulate variables and avoid global scope pollution
+        (function() {
+            // --- 1. MOCK VIDEO DATA ---
+            const videoData = [
+
+
+{
+    id: 1,
+    title:"The EGG of a Dragon",
+    user: "SkyLight_ANimation",
+    thumbnail: "https://i.pinimg.com/736x/e0/3b/73/e03b73827162458270c9abc08e7d1bc1.jpg",
+    youtubeId: "zj_IH8o0XCU",
+    views: "Animation",
+    description: `
+        <p> Trying to waste my precious holiday time, but for now, it's already fulfilled while I finish this.</p>
+        <p>An animation about  hatched Dinosaur EGG with a soccer ball patterned skin.</p>
+    `
+
+},
+{
+    id: 2,
+    title:"Darkness Illusion Magic: Laughing (Fever Dream)",
+    user: "SkyLight_ANimation",
+    thumbnail: "./assets/img/Card/card_darkness_Illusion.png",
+    youtubeId: "C6GpJdUFVZY",
+    views: "Game Assets Magic Skill",
+    description: `       
+        <p class="text-secondary text-justify">Happy Halloween Month, everyone! While this new magic asset for our RPG Game might not be terrifying, it's certainly magical! We're finally ready to show off the asset we've been working on. This short video is a demo showcasing its in-game effects. Check it out!</p>
+
+        <p class="text-secondary text-justify">It's finally here! We're very exiting to unveil our newest magic asset for the Turn based RPG Game! This short is a quick demo to give you a sneak peek. Full details are listed below:</p>
+
+        <p class="text-secondary text-justify">
+            <b>Skill:</b> Darkness Illusion Magic: Laughing (Fever Dream) <br/>
+            <b>Type:</b> Magic<br/>
+            <b>Tier:</b> A+<br/>
+            <b>Magic Element:</b> Darkness<br/>
+            <b>Magic Category:</b> Illusion , Curse<br/>
+            <b>Effect:</b> target will stun 5 turn (50% Chance), unconscious 4 turn (45% Chance), blind 7 time, decrease sanity 80%, absorb 50% MP each enemy and recover the caster 25% MP.
+        </p>
+
+        <p class="text-secondary text-justify"> <b>Describes:</b> <br/>Upon activation, the target is instantly enveloped and dragged, without conscious thought, into a world of absolute darkness. </p>
+
+        <p class="text-secondary text-justify">A single red light manifests, coiling and snapping into the shape of a colossal jaw that seems poised to devour them. This is merely a facade; the darkness itself siphons the memories of the target's victims, twisting them into razor-sharp questions and scathing, roasting sentences. The resulting volley of accusations whispers deep within the target's mind, compelling them to feel the agony their victims endured—all while the laughing, crimson maw echoes throughout the void. </p>
+
+        <p class="text-secondary text-justify">This psychological curse forces the target to fully taste their victims' sorrow, inflicting devastating emotional and mental damage. </p>
+
+
+        <p class="text-secondary text-justify">
+        <b>Thanks to:</b><br><br>
+
+        <b>🎨 Artworks :</b><br>
+        <a href="https://www.deviantart.com/kariyaryuuichi/art/Darkness-Illusion-Magic-Laughing-Fever-Dream-1249458417" target="_blank">Darkness Illusion Magic: Laughing (Fever Dream)</a> by Sastrika Arya<br><br>
+        
+
+        <b>🎵 Music Info:</b><br>
+        <a href="https://youtube.com/watch?v=npseTMjRqeQ" target="_blank"> Apprehension</a> by Kevin MacLeod<br><br>
+        
+
+        <b>🎙 SFX :</b><br>
+        <a href="https://pixabay.com/id/sound-effects/possessed-laugh-94851/" target="_blank">Possessed Laugh</a> by AgentA1cr (Freesound)<br><br>
+        </p>
+        
+
+
+        <p class="text-secondary text-justify">The concept was inspired by the unsettling experience of an anxious fever dream.<br>
+        Anyways, Happy Halloween 🎃 ~ Trick or Treat ~ 🍬🎃</p>
+
+
+    `
+
+},
+
+{
+    id: 3,
+    title:"Darkness Necromancer Magic: Summon Undead (Skeleton)",
+    user: "SkyLight_ANimation",
+    thumbnail: "./assets/img/Card/card_darkness_Necromancer.png",
+    youtubeId: "EINMsRqSM0M",
+    views: "Game Assets Magic Skill",
+    description: `
+        <p class="text-secondary text-justify">BEHOLD! Our new magic asset for the turn-based RPG Game is finally ready to spell out : A Necromancy Magic! 💀</p>
+
+        <p class="text-secondary text-justify">Our magic research and development unleashing a horrifying of darkness magical skill (perhaps 🙄). So, This is the following detail of the assets.</p>
+
+        <p class="text-secondary">
+        <b>Magic Skill Detail:</b><br/>
+        <b>Skill Name:</b> Darkness Magic Necromancer : Summon Undead (Skeleton).<br/>
+        <b>Type:</b> Magic<br/>
+        <b>Tier:</b> A<br/>
+        <b>Magic Element:</b> Darkness, Earth<br/>
+        <b>Magic Category:</b> Necromancer, Soul Manipulation
+        </p>
+        <p class="text-secondary text-justify">
+            <b>Effect:</b><br/>       
+            Reduce physical damage taken, then reduce damage will be covered by summon object for -50 points, extra by summon object each turn for 200 points. The darkness will drop the accuracy status of the target or enemy.
+        </p>
+        <p class="text-secondary text-justify">
+            <b>Describes:</b><br/>
+            This magic is a combination of earth and darkness magic spells.<br/>
+            The vessel was composed of mineral substances from the earth, which were gathered and  constructed by an earth magic spell. Next, the necromancer magic spell calling  the unsettled soul, then bound it down to the vassal.<br/>
+        </p>
+
+       
+        <p class="text-secondary text-justify">
+            <b>Summoned Object - Status:</b>
+            <blockquote class="ms-2">
+            <b>Name:</b> Skull / Skeleton  (Undead)<br/>
+            <b>Category:</b> Monster, Summon Object, Minion<br/>
+            <b>Monster Type:</b> Undead<br/>
+            <b>Tier:</b> D<br/>
+            <b>Hit Point:</b> 350 <br/>
+            <b>Magic Point:</b> 0<br/>
+            <b>Physical Attack:</b> 100<br/>
+            <b>Physical Defense:</b> 50<br/>
+            <b>M.Attack:</b> 20<br/>
+            <b>M.Defense:</b> 0<br/>
+            <b>Live duration:</b> ~ (The spell will be disband when the summoning object's Hit Point reaches 0 points.)
+            <b>Movements:</b> Wake Up, Approach, Idle (Glitch), Attack (Bite)<br/>
+            </blockquote>
+        </p>
+        
+
+        <p class="text-secondary ">
+            <b>Thanks to:</b><br/>
+
+            <b>🎵 Music Info:</b><br/>
+            <a href="https://www.youtube.com/watch?v=vMUmz5FFKA0&list=RDvMUmz5FFKA" target="_blank">Apotheosis by Kevin MacLeod</a><br/><br/>
+
+            <b>🎨 Artworks:</b><br/>
+            Darkness Necromancer Magic: Summon Undead (Skull) by Sastrika Arya<br/><br/>
+
+           <b> 🗃 Game Assets Free Download:</b> <a href="https://skylightanimation.itch.io/summon-undead" target="_blank">here</a> <br/>
+                        
+        </p>
+
+        <p class="text-secondary">
+            <center>Anyways, Happy Halloween 🎃 ~ Trick or Treat ~ 🍬🎃</center>
+        </p>
+
+    `
+
+},
+{
+    id: 4,
+    title:"Desert Creature: Blob - Spinarbor Corruptiflora",
+    user: "SkyLight_ANimation",
+    thumbnail: "https://i.pinimg.com/736x/de/ad/5d/dead5d0621db92a70aaa572f662ec89b.jpg",
+    youtubeId: "S-uouDvf0KQ",
+    views: "Asset Character",
+    description: `
+        <b>Name:</b> Blob of Spinarbor Corruptiflora.<br>
+        <b>Level:</b> Lv. 0-5.<br>
+        <b>Type:</b> Plant, Mutant.<br>
+        <b>Element:</b> Grass, Water.<br>
+        <b>Environment:</b> Desert.<br>
+        <b>Drop Item:</b> Fresh Water, Spinarbor Spines. Spinarbor Desserto (Spinarbor Skin).<br>
+        <b>Skill:</b> Spines shoot.<br>
+
+        <p class="text-secondary text-justify"><b>Description:</b><br>
+            <i>The Spinarbor Corruptiflora</i> is a blob-shaped, mutated cactus that detaches from its roots to find water. It re-roots and becomes dormant when full, much like a normal cactus, and only awakens to threats when physically attacked. If it runs out of water, it enters a "rage mode," aggressively seeking and attacking creatures containing water. Without water, however, it dries up and perishes within three months.<br><br>
+            Desert adventurers frequently hunt Spinarbor Corruptifloras for their water.
+        </p>
+        <p class="text-secondary">
+            <b>Thank's for contribute :</b><br>
+            🎨 Art (Character Design) by <a href="https://www.deviantart.com/kariyaryuuichi" target="_blank">Kariya Ryuuichi</a><br>
+            🖼 Background by <a href="https://www.deviantart.com/miichika" target="_blank">May Suichika</a>
+        </p>
+
+    `
+
+}
+            ];
+
+            const $gallery = $('#video-gallery');
+            const $carouselContent = $('#carousel-content');
+            const videoModal = new bootstrap.Modal(document.getElementById('videoReelModal'));
+            const $descriptionPanel = $('#descriptionPanel');
+            const $togglePanelBtn = $('#togglePanelBtn');
+            const $togglePlayPauseBtn = $('#togglePlayPauseBtn');
+            const $toggleVolumeBtn = $('#toggleVolumeBtn');
+            
+            // Map to store active YT.Player instances by their DOM element ID
+            const playerInstances = {};
+            let currentVideoIndex = 0;
+            let currentActivePlayer = null;
+
+            // --- 2. YOUTUBE API READY STATE (Required by API) ---
+            window.onYouTubeIframeAPIReady = function() {
+                // This function is called automatically by the YouTube API script
+                console.log("YouTube Iframe API is ready.");
+            }
+
+            // --- 3. GALLERY RENDERING ---
+            function renderGallery() {
+                let html = '';
+                videoData.forEach((video, index) => {
+                    html += `
+                        <div class="col">
+                            <div class="card video-card shadow-sm" data-video-index="${index}">
+                                <img src="${video.thumbnail}" class="card-img-top video-thumbnail" alt="${video.title} thumbnail">
+                                <div class="card-body-custom">
+                                    <h5 class="card-title-custom text-truncate">${video.title}</h5>
+                                    <small class="text-muted text-category"><i class="fa-solid fa-icons me-1"></i> ${video.views} </small>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                $gallery.html(html);
+            }
+
+            // --- 4. CAROUSEL CONTENT GENERATION (The Reel View) ---
+            function buildCarouselContent() {
+                $carouselContent.empty(); 
+                videoData.forEach((video, index) => {
+                    const isActive = index === currentVideoIndex ? 'active' : '';
+                    // This is the unique ID the YouTube API will target and replace with an iframe
+                    const placeholderId = `Youtubeer-${video.id}`; 
+
+                    const itemHtml = `
+                        <div class="carousel-item ${isActive} h-100" data-youtube-id="${video.youtubeId}" data-video-index="${index}">
+                            <!-- The div below acts as the placeholder for the YT.Player iframe -->
+                            <div class="youtube-player-placeholder" id="${placeholderId}">
+                                <div class="w-100 h-100 d-flex justify-content-center align-items-center text-white-50">
+                                    <i class="fas fa-spinner fa-spin fa-3x"></i> Loading video...
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    $carouselContent.append(itemHtml);
+                });
+            }
+
+            // --- 5. PLAYER API MANAGEMENT ---
+            
+            function createYouTubePlayer(placeholderId, youtubeId, isMuted = false) {
+                // If the player already exists, return it
+                if (playerInstances[placeholderId]) {
+                    return playerInstances[placeholderId];
+                }
+
+                // Create a new YT.Player instance
+                const player = new YT.Player(placeholderId, {
+                    videoId: youtubeId,
+                    playerVars: {
+                        autoplay: 1,     // Start playing
+                        controls: 0,     // Hide controls
+                        loop: 1,         // Enable looping
+                        playlist: youtubeId, // Needed for loop=1 to work
+                        mute: isMuted ? 1 : 0, // Initial volume state
+                        modestbranding: 1,
+                        rel: 0,
+                        showinfo: 0,
+                        iv_load_policy: 3,
+                    },
+                    events: {
+                        'onReady': (event) => {
+                            // Video is loaded and ready to play
+                            event.target.playVideo();
+                            // Update controls state
+                            updateControls(event.target);
+                        },
+                        'onStateChange': (event) => {
+                            // Update controls state on state change (e.g., buffering, paused, ended)
+                            updateControls(event.target);
+                        }
+                    }
+                });
+                
+                playerInstances[placeholderId] = player;
+                return player;
+            }
+
+            function destroyYouTubePlayer(placeholderId) {
+                if (playerInstances[placeholderId]) {
+                    playerInstances[placeholderId].destroy();
+                    delete playerInstances[placeholderId];
+                    // Manually clear the DOM element content
+                    $(`#${placeholderId}`).html(`
+                        <div class="w-100 h-100 d-flex justify-content-center align-items-center text-white-50">
+                            <i class="fas fa-video fa-2x"></i> Video Stopped
+                        </div>
+                    `);
+                }
+            }
+
+            function updateControls(player) {
+                if (!player || !player.getPlayerState) return;
+
+                // 1. Play/Pause Button
+                const playerState = player.getPlayerState();
+                const isPlaying = (playerState === YT.PlayerState.PLAYING) || (playerState === YT.PlayerState.BUFFERING);
+                
+                $('#playPauseIcon').removeClass('fa-play fa-pause').addClass(isPlaying ? 'fa-pause' : 'fa-play');
+
+                // 2. Volume Button
+                const isMuted = player.isMuted();
+                $('#volumeIcon').removeClass('fa-volume-up fa-volume-mute').addClass(isMuted ? 'fa-volume-mute' : 'fa-volume-up');
+
+                // Set the current active player reference for global control
+                currentActivePlayer = player;
+            }
+
+            // --- 6. CONTROL HANDLERS ---
+            
+            // Toggle Play/Pause
+            $togglePlayPauseBtn.on('click', function() {
+                if (!currentActivePlayer) return;
+
+                const playerState = currentActivePlayer.getPlayerState();
+                if (playerState === YT.PlayerState.PLAYING || playerState === YT.PlayerState.BUFFERING) {
+                    currentActivePlayer.pauseVideo();
+                } else {
+                    currentActivePlayer.playVideo();
+                }
+            });
+
+            // Toggle Volume (Mute/Unmute)
+            $toggleVolumeBtn.on('click', function() {
+                if (!currentActivePlayer) return;
+
+                if (currentActivePlayer.isMuted()) {
+                    currentActivePlayer.unMute();
+                } else {
+                    currentActivePlayer.mute();
+                }
+                updateControls(currentActivePlayer);
+            });
+
+
+            // --- 7. DESCRIPTION PANEL UPDATE ---
+            
+            function updateDescriptionPanel(videoIndex) {
+                const video = videoData[videoIndex];
+                const contentHtml = `
+                    <div class="description-content">
+                        <h4 class="fw-bold mb-3">${video.title}</h4>
+                        
+                        <!-- User Info -->
+                        <div class="d-flex align-items-center mb-4 border-bottom pb-3">
+                            <i class="fas fa-user-circle fa-2x me-3 text-secondary"></i>
+                            <div>
+                                <p class="mb-0 fw-bold">${video.user}</p>
+                                <small class="text-muted text-category"><i class="fa-solid fa-icons me-1"></i> ${video.views} </small>
+                            </div>
+                        </div>
+
+                        <!-- Description -->
+                        <p class="text-secondary">${video.description}</p>
+                        
+                        <!-- Additional Actions -->
+                        <!-- <div class="mt-4 pt-3 border-top">
+                             <h6 class="text-primary mb-2" style="color: var(--primary-color) !important;">Additional Actions</h6>
+                             <div class="d-grid gap-2">
+                                <button class="btn btn-sm btn-outline-secondary rounded-pill">
+                                    <i class="fas fa-comment-dots me-2"></i> View Comments
+                                </button>
+                                <button class="btn btn-sm btn-outline-secondary rounded-pill">
+                                    <i class="fas fa-share-alt me-2"></i> Share Reel
+                                </button>
+                                <button class="btn btn-sm btn-outline-secondary rounded-pill">
+                                    <i class="fas fa-bookmark me-2"></i> Save to Favorites
+                                </button>
+                             </div>
+                            </div>-->
+                    </div>
+                `;
+                $descriptionPanel.html(contentHtml);
+            }
+
+
+            // --- 8. EVENT HANDLERS ---
+            
+            // A. Handle Gallery Click
+            $gallery.on('click', '.video-card', function() {
+                currentVideoIndex = $(this).data('video-index');
+                buildCarouselContent(); // Rebuild carousel for the new session
+
+                const $carousel = $('#videoCarousel');
+                const carouselInstance = bootstrap.Carousel.getOrCreateInstance($carousel[0]);
+                carouselInstance.to(currentVideoIndex);
+
+                videoModal.show();
+            });
+
+            // B. Toggle Panel Logic
+            $togglePanelBtn.on('click', function() {
+                const isExpanded = $descriptionPanel.hasClass('expanded');
+                
+                $descriptionPanel.toggleClass('expanded', !isExpanded);
+                $togglePanelBtn.toggleClass('shifted', !isExpanded);
+                $togglePanelBtn.attr('aria-expanded', !isExpanded);
+
+                const iconClass = isExpanded ? 'fa-bars' : 'fa-times';
+                $togglePanelBtn.find('i').removeClass('fa-bars fa-times').addClass(iconClass);
+            });
+
+
+            // C. Handle Modal Show/Hide Events
+            const modalElement = document.getElementById('videoReelModal');
+
+            modalElement.addEventListener('shown.bs.modal', function() {
+                // Ensure controls are visible and panel is closed on open
+                $descriptionPanel.removeClass('expanded');
+                $togglePanelBtn.removeClass('shifted').find('i').removeClass('fa-times').addClass('fa-bars');
+                $togglePlayPauseBtn.show();
+                $toggleVolumeBtn.show();
+
+                // Initial load and play of the first video
+                const $activeItem = $carouselContent.find('.carousel-item.active');
+                const youtubeId = $activeItem.data('youtube-id');
+                const videoIndex = $activeItem.data('video-index');
+                const placeholderId = $activeItem.find('.youtube-player-placeholder').attr('id');
+                
+                if (placeholderId && youtubeId) {
+                    createYouTubePlayer(placeholderId, youtubeId, true); // Muted start is a good practice
+                    updateDescriptionPanel(videoIndex);
+                }
+            });
+
+            modalElement.addEventListener('hidden.bs.modal', function() {
+                // Destroy all players when the modal is closed to stop playback/memory leaks
+                Object.keys(playerInstances).forEach(id => destroyYouTubePlayer(id));
+                $descriptionPanel.empty(); 
+                currentActivePlayer = null;
+            });
+
+            // D. Handle Carousel Slide Event (Slide Away and Slide Complete)
+            modalElement.addEventListener('slide.bs.carousel', function(event) {
+                // 1. Stop the video sliding *away*
+                const $leavingItem = $carouselContent.find('.carousel-item').eq(event.from);
+                const placeholderId = $leavingItem.find('.youtube-player-placeholder').attr('id');
+                
+                if (playerInstances[placeholderId]) {
+                    playerInstances[placeholderId].pauseVideo();
+                }
+            });
+
+            modalElement.addEventListener('slid.bs.carousel', function(event) {
+                // 2. Start the video sliding *to*
+                const $enteringItem = $carouselContent.find('.carousel-item').eq(event.to);
+                const youtubeId = $enteringItem.data('youtube-id');
+                const videoIndex = $enteringItem.data('video-index');
+                const placeholderId = $enteringItem.find('.youtube-player-placeholder').attr('id');
+
+                if (placeholderId && youtubeId) {
+                    // Create (or get) the player and ensure it plays
+                    const player = createYouTubePlayer(placeholderId, youtubeId, currentActivePlayer ? currentActivePlayer.isMuted() : true);
+                    player.playVideo();
+                    updateDescriptionPanel(videoIndex);
+                    updateControls(player); // Update the icons for the new video
+                }
+            });
+
+            // --- 9. INITIALIZATION ---
+            $(document).ready(function() {
+                renderGallery();
+            });
+
+        })();
+
+
+
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+
+</body>
+</html>
